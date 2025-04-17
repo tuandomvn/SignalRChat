@@ -1,0 +1,34 @@
+@page
+@model SignalRChat.Pages.AgentLoginModel
+@{
+    ViewData["Title"] = "Agent Login";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h2 class="text-center">Agent Login</h2>
+                </div>
+                <div class="card-body">
+                    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                    {
+                        <div class="alert alert-danger">@Model.ErrorMessage</div>
+                    }
+                    <form method="post">
+                        <div class="form-group mb-3">
+                            <label asp-for="AgentId">Agent ID</label>
+                            <input type="text" asp-for="AgentId" class="form-control" required value="b-senior" />
+                            <small class="form-text text-muted">Enter your Agent ID (e.g. a-lead, b-senior, etc.)</small>
+                        </div>
+                        
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Login as Agent</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

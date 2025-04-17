@@ -1,0 +1,142 @@
+@page
+@model SignalRChat.Pages.DebugChatsModel
+@{
+    ViewData["Title"] = "Debug Active Chats";
+}
+
+<div class="container mt-4">
+    <h2>Debug Active Chats</h2>
+    
+    <!-- Teams Status -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Teams Status</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Team ID</th>
+                            <th>Name</th>
+                            <th>Shift</th>
+                            <th>Team IsActive</th>
+                            <th>Agents</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var team in Model.Teams)
+                        {
+                            <tr>
+                                <td>@team.TeamId</td>
+                                <td>@team.Name</td>
+                                <td>@team.Shift</td>
+                                <td>
+                                    <span class="badge @(team.IsActive ? "bg-success" : "bg-danger")">
+                                        @(team.IsActive ? "Active" : "Inactive")
+                                    </span>
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        @foreach (var agent in team.Agents)
+                                        {
+                                            <li>
+                                                <span class="badge @(agent.IsAvailable ? "bg-success" : "bg-danger") me-2">
+                                                    @(agent.IsAvailable ? "Available" : "Unavailable")
+                                                </span>
+                                                @agent.Name (@agent.AgentId) - @agent.Seniority
+                                            </li>
+                                        }
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Agent Connections -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Agent Connections</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Connection ID</th>
+                            <th>Agent ID</th>
+                            <th>Agent Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var connection in Model.AgentConnections)
+                        {
+                            <tr>
+                                <td>@connection.Key</td>
+                                <td>@connection.Value</td>
+                                <td>@Model.GetAgentName(connection.Value)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Chats -->
+    <div class="card">
+        <div class="card-header">
+            <h4>Active Chats</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Chat ID</th>
+                            <th>User</th>
+                            <th>Agent ID</th>
+                            <th>Team ID</th>
+                            <th>User Connection ID</th>
+                            <th>Agent Connection ID</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var chat in Model.ActiveChats)
+                        {
+                            <tr>
+                                <td>@chat.ChatId</td>
+                                <td>@chat.DisplayName</td>
+                                <td>@chat.AgentId (@Model.GetAgentName(chat.AgentId))</td>
+                                <td>@chat.TeamId</td>
+                                <td>@chat.UserConnectionId</td>
+                                <td>@chat.AgentConnectionId</td>
+                                <td>@Model.GetChatDuration(chat)</td>
+                                <td>
+                                    <span class="badge @(chat.IsActive ? "bg-success" : "bg-danger")">
+                                        @(chat.IsActive ? "Active" : "Inactive")
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Auto refresh the page every 3 seconds
+        setTimeout(function() {
+            location.reload();
+        }, 3000);
+    </script>
+} 

@@ -1,0 +1,603 @@
+@page
+@using SignalRChat.Models
+@model AgentDashboardModel
+@{
+    ViewData["Title"] = "Agent Dashboard";
+}
+
+<div class="container mt-4">
+    <!-- Chat Message Modal Template -->
+    <template id="chatModalTemplate">
+        <div class="modal fade chat-modal" tabindex="-1" aria-labelledby="chatModalLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Chat with User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="messages-list border rounded p-3 mb-3" style="height: 300px; overflow-y: auto;">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="message-input form-control" placeholder="Type your message...">
+                            <button class="send-button btn btn-primary" type="button">Send</button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Minimize Window</button>
+                        <button type="button" class="end-session-button btn btn-danger">End Chat Session</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Minimized Chats Container -->
+    <div id="minimizedChats" class="position-fixed bottom-0 end-0 mb-3 me-3 d-flex flex-column-reverse">
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.AgentId))
+    {
+        <div id="connectionStatus" class="alert alert-info d-none">
+            Connecting...
+        </div>
+
+        @Html.AntiForgeryToken()
+
+        @if (Model.CurrentAgent != null)
+        {
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">Agent Information</h5>
+                                <form method="post" style="display: inline;">
+                                    <button type="submit" asp-page-handler="Logout" class="btn btn-outline-danger">
+                                        Logout
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="me-2">Status:</span>
+                                <span class="badge @Model.GetAgentStatusBadgeClass()">@Model.GetAgentStatusText()</span>
+                                <span class="badge bg-primary ms-2">@Model.CurrentAgent.Name</span>
+                                <span class="badge @Model.GetSeniorityBadgeClass() ms-2">@Model.CurrentAgent.Seniority</span>
+                            </div>
+                            @if (Model.CurrentTeam != null)
+                            {
+                                <p class="mb-2">Team: @Model.CurrentTeam.Name</p>
+                                <p class="mb-0">Shift Time: @Model.GetTeamShiftTime()</p>
+                            }
+                            <form method="post" class="mt-3">
+                                <button type="submit" asp-page-handler="ToggleAvailability" asp-route-isAvailable="@(!Model.CurrentAgent.IsAvailable)"
+                                        class="btn @(Model.CurrentAgent.IsAvailable ? "btn-danger" : "btn-success")">
+                                    @(Model.CurrentAgent.IsAvailable ? "Go Unavailable" : "Go Available")
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="card" id="activeChatsTable">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">Active Chats</h5>
+                                <button type="button" class="btn btn-outline-primary btn-sm" id="refreshActiveChats">
+                                    <i class="bi bi-arrow-clockwise"></i> Refresh
+                                </button>
+                            </div>
+                            <div id="activeChatsContent">
+                                @await Html.PartialAsync("_ActiveChatsTable", Model)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger">
+                Agent not found. Please check your credentials.
+            </div>
+        }
+    }
+
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">All Teams Status</h5>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Team</th>
+                                    <th>Shift Time</th>
+                                    <th>Status</th>
+                                    <th>Agents</th>
+                                    <th>Active Chats</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var team in Model.AllTeams)
+                                {
+                                    <tr>
+                                        <td>@team.Name</td>
+                                        <td>
+                                            @if (team.Shift == ShiftType.Overflow)
+                                            {
+                                                <span>Flexible Hours</span>
+                                            }
+                                            else
+                                            {
+                                                <span>@team.ShiftStartTime.ToString(@"hh\:mm") - @team.ShiftEndTime.ToString(@"hh\:mm")</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <span class="badge @(team.IsActive ? "bg-success" : "bg-danger")">
+                                                @(team.IsActive ? "Active" : "Inactive")
+                                            </span>
+                                        </td>
+                                        <td>
+                                            @foreach (var agent in team.Agents)
+                                            {
+                                                <div class="mb-1">
+                                                    <a href="/AgentDashboard?agentId=@agent.AgentId" class="text-decoration-none">
+                                                        <span class="badge bg-primary">@agent.Name</span>
+                                                        <span class="badge @(agent.IsAvailable ? "bg-success" : "bg-danger")">
+                                                            @(agent.IsAvailable ? "Available" : "Unavailable")
+                                                        </span>
+                                                        <span class="badge @(agent.Seniority switch {
+                                                            AgentSeniority.TeamLead => "bg-danger",
+                                                            AgentSeniority.Senior => "bg-warning",
+                                                            AgentSeniority.MidLevel => "bg-info",
+                                                            _ => "bg-secondary"
+                                                        })">@agent.Seniority</span>
+                                                    </a>
+                                                </div>
+                                            }
+                                        </td>
+                                        <td>@Model.GetTeamActiveChats(team.TeamId).Count()</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @if (!string.IsNullOrEmpty(Model.AgentId) && Model.CurrentAgent != null)
+    {
+        <script src="~/js/signalr/dist/browser/signalr.js"></script>
+        <script>
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chatHub")
+                .withAutomaticReconnect([0, 2000, 5000, 10000, null])
+                .build();
+
+            const connectionStatus = document.getElementById('connectionStatus');
+            const activeChats = new Map(); // Store active chat sessions
+
+            // Handle receiving messages
+            connection.on("ReceiveMessage", (user, message, chatId) => {
+                const isAgent = user === "@Model.CurrentAgent.Name";
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("mb-2");
+                messageElement.classList.add(isAgent ? "text-end" : "text-start");
+                
+                messageElement.innerHTML = `
+                    <span class="badge ${isAgent ? 'bg-primary' : 'bg-secondary'} mb-1">${user}</span>
+                    <div class="d-inline-block p-2 rounded ${isAgent ? 'bg-primary text-white' : 'bg-light'}" style="max-width: 75%;">
+                        ${message}
+                    </div>`;
+
+                // Find the correct chat modal and append message
+                const chatModal = document.getElementById(`chatModal_${chatId}`);
+                if (chatModal) {
+                    const messagesList = chatModal.querySelector('.messages-list');
+                    messagesList.appendChild(messageElement);
+                    messagesList.scrollTop = messagesList.scrollHeight;
+                }
+
+                // Update message counter if chat is minimized
+                const minimizedButton = document.querySelector(`.minimized-chat[data-chat-id="${chatId}"]`);
+                if (minimizedButton && minimizedButton.style.display !== 'none') {
+                    const counter = minimizedButton.querySelector('.message-counter');
+                    const currentCount = parseInt(counter.textContent) || 0;
+                    counter.textContent = currentCount + 1;
+                    counter.style.display = 'inline';
+                }
+            });
+
+            function createChatModal(chatId, userName) {
+                // Clone the template
+                const template = document.getElementById('chatModalTemplate');
+                const modal = template.content.cloneNode(true).querySelector('.modal');
+                
+                // Set unique ID and data attributes
+                modal.id = `chatModal_${chatId}`;
+                modal.setAttribute('data-chat-id', chatId);
+                
+                // Set the title
+                modal.querySelector('.modal-title').textContent = `Chat with ${userName}`;
+                
+                // Add to document
+                document.body.appendChild(modal);
+                
+                // Create or get existing minimized chat button
+                let minimizedButton = document.querySelector(`.minimized-chat[data-chat-id="${chatId}"]`);
+                if (!minimizedButton) {
+                    minimizedButton = document.createElement('button');
+                    minimizedButton.className = 'btn btn-primary mb-2 minimized-chat';
+                    minimizedButton.setAttribute('data-chat-id', chatId);
+                    minimizedButton.style.display = 'none';
+                    minimizedButton.innerHTML = `
+                        Chat with ${userName}
+                        <span class="badge bg-danger ms-2 message-counter" style="display: none;">0</span>
+                    `;
+                    document.getElementById('minimizedChats').appendChild(minimizedButton);
+                }
+
+                // Setup event handlers
+                const messageInput = modal.querySelector('.message-input');
+                const sendButton = modal.querySelector('.send-button');
+                const endSessionButton = modal.querySelector('.end-session-button');
+
+                // Send message handler
+                sendButton.addEventListener('click', async () => {
+                    const message = messageInput.value.trim();
+                    if (message) {
+                        try {
+                            await connection.invoke("SendMessage", "@Model.CurrentAgent.Name", message);
+                            messageInput.value = '';
+                        } catch (err) {
+                            console.error(err);
+                            alert('Error sending message. Please try again.');
+                        }
+                    }
+                });
+
+                // Enter key handler
+                messageInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        sendButton.click();
+                    }
+                });
+
+                // End session handler
+                endSessionButton.addEventListener('click', async () => {
+                    if (confirm('Are you sure you want to end this chat?')) {
+                        try {
+                            await connection.invoke("EndChat", chatId);
+                            // Modal and active chats table will be updated by the ChatEnded event handler
+                        } catch (err) {
+                            console.error("Error ending chat:", err);
+                            alert("Error ending chat. Please try again.");
+                        }
+                    }
+                });
+
+                // Minimize/Maximize handlers
+                modal.addEventListener('hide.bs.modal', () => {
+                    minimizedButton.style.display = 'block';
+                    // Remove modal backdrop and restore scrolling
+                    document.querySelector('.modal-backdrop')?.remove();
+                    document.body.classList.remove('modal-open');
+                    document.body.style.overflow = '';
+                    document.body.style.paddingRight = '';
+                });
+
+                minimizedButton.addEventListener('click', () => {
+                    // Hide all other modals first
+                    document.querySelectorAll('.chat-modal').forEach(m => {
+                        const instance = bootstrap.Modal.getInstance(m);
+                        if (instance) {
+                            instance.hide();
+                        }
+                    });
+                    
+                    // Show this modal
+                    const modalInstance = new bootstrap.Modal(modal);
+                    modalInstance.show();
+                    minimizedButton.style.display = 'none';
+                    const counter = minimizedButton.querySelector('.message-counter');
+                    counter.style.display = 'none';
+                    counter.textContent = '0';
+                });
+
+                return modal;
+            }
+
+            function attachChatButtonListeners() {
+                // Attach listeners to open chat buttons
+                document.querySelectorAll('.open-chat').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const chatId = this.getAttribute('data-chat-id');
+                        const userName = this.getAttribute('data-username');
+                        openChat(chatId, userName);
+                    });
+                });
+
+                // Attach listeners to end chat buttons
+                document.querySelectorAll('.end-chat-btn').forEach(button => {
+                    button.addEventListener('click', async function() {
+                        const chatId = this.getAttribute('data-chat-id');
+                        if (confirm('Are you sure you want to end this chat?')) {
+                            await connection.invoke("EndChat", chatId);
+                            await refreshActiveChats(); // Refresh the table after ending chat
+                        }
+                    });
+                });
+            }
+
+            // Function to refresh active chats
+            async function refreshActiveChats() {
+                try {
+                    const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+                    const agentId = '@Model.AgentId';
+                    
+                    const response = await fetch(`${window.location.pathname}?handler=RefreshActiveChats&agentId=${agentId}`, {
+                        method: 'GET',
+                        headers: {
+                            'RequestVerificationToken': token,
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+
+                    if (response.ok) {
+                        const html = await response.text();
+                        const content = document.querySelector('#activeChatsContent');
+                        if (content) {
+                            content.innerHTML = html;
+                            attachChatButtonListeners();
+                            console.log('Active chats table refreshed successfully');
+                        } else {
+                            console.error('Could not find active chats content element');
+                        }
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Server returned error:', errorData.error);
+                    }
+                } catch (error) {
+                    console.error('Error refreshing active chats:', error);
+                }
+            }
+
+            // Auto refresh every 30 seconds
+            const autoRefreshInterval = setInterval(refreshActiveChats, 30000);
+
+            // Add click handler for refresh button
+            const refreshButton = document.getElementById('refreshActiveChats');
+            if (refreshButton) {
+                refreshButton.addEventListener('click', () => {
+                    refreshButton.disabled = true;
+                    refreshActiveChats().finally(() => {
+                        refreshButton.disabled = false;
+                    });
+                });
+            }
+
+            // Clear interval when page is unloaded
+            window.addEventListener('unload', () => {
+                clearInterval(autoRefreshInterval);
+            });
+
+            function openChat(chatId, userName) {
+                // Check if chat modal already exists
+                let chatModal = document.getElementById(`chatModal_${chatId}`);
+                if (chatModal) {
+                    const modalInstance = new bootstrap.Modal(chatModal);
+                    modalInstance.show();
+                    return;
+                }
+
+                // Create new chat modal
+                chatModal = createChatModal(chatId, userName);
+                
+                // Join the chat on the server
+                connection.invoke("JoinChat", chatId).then(() => {
+                    // Show the modal after joining the chat
+                    const modalInstance = new bootstrap.Modal(chatModal);
+                    modalInstance.show();
+                }).catch(err => {
+                    console.error("Error joining chat:", err);
+                    alert("Error joining chat. Please try again.");
+                });
+            }
+
+            function closeChat(chatId) {
+                const chatModal = document.getElementById(`chatModal_${chatId}`);
+                if (chatModal) {
+                    const modalInstance = bootstrap.Modal.getInstance(chatModal);
+                    if (modalInstance) {
+                        modalInstance.hide();
+                    }
+                }
+            }
+
+            function makeDraggable(element) {
+                let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                element.querySelector('.chat-header').onmousedown = dragMouseDown;
+
+                function dragMouseDown(e) {
+                    e.preventDefault();
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e.preventDefault();
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    element.style.top = (element.offsetTop - pos2) + "px";
+                    element.style.left = (element.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+
+            async function loadChatHistory(chatId) {
+                try {
+                    const response = await fetch(`/Chat/History/${chatId}`);
+                    if (!response.ok) throw new Error('Failed to load chat history');
+                    
+                    const messages = await response.json();
+                    const messagesContainer = document.querySelector(`#messages-${chatId}`);
+                    
+                    messages.forEach(msg => {
+                        const messageElement = document.createElement('div');
+                        messageElement.className = `message ${msg.isFromAgent ? 'agent' : 'user'}`;
+                        messageElement.textContent = msg.content;
+                        messagesContainer.appendChild(messageElement);
+                    });
+                    
+                    // Scroll to bottom
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                } catch (error) {
+                    console.error('Error loading chat history:', error);
+                }
+            }
+
+            async function sendMessage(chatId) {
+                const messageInput = document.querySelector(`#message-${chatId}`);
+                const message = messageInput.value.trim();
+                
+                if (!message) return;
+                
+                try {
+                    await connection.invoke("SendMessage", chatId, message);
+                    messageInput.value = '';
+                } catch (error) {
+                    console.error('Error sending message:', error);
+                }
+            }
+
+            connection.on("ChatEnded", (message) => {
+                try {
+                    console.log('Chat ended:', message);
+                    
+                    // Extract chatId from the message if it's an object
+                    const chatId = typeof message === 'object' ? message.chatId : message.split(' ')[0];
+                    
+                    // Find and close the chat modal
+                    const modal = document.getElementById(`chatModal_${chatId}`);
+                    if (modal) {
+                        const bsModal = bootstrap.Modal.getInstance(modal);
+                        if (bsModal) {
+                            bsModal.hide();
+                        }
+                        modal.remove();
+                    }
+
+                    // Remove minimized chat button if exists
+                    const minimizedButton = document.querySelector(`.minimized-chat[data-chat-id="${chatId}"]`);
+                    if (minimizedButton) {
+                        minimizedButton.remove();
+                    }
+
+                    // Show notification
+                    const notification = document.createElement('div');
+                    notification.className = 'alert alert-info alert-dismissible fade show position-fixed top-0 end-0 m-3';
+                    notification.innerHTML = `
+                        <strong>Chat Ended</strong><br>
+                        ${typeof message === 'string' ? message : 'Chat session has ended'}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    document.body.appendChild(notification);
+
+                    // Remove notification after 5 seconds
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 5000);
+
+                    // Refresh the active chats table
+                    refreshActiveChats();
+                    
+                } catch (error) {
+                    console.error('Error handling ChatEnded event:', error);
+                }
+            });
+
+            async function start() {
+                try {
+                    connectionStatus.classList.remove('d-none', 'alert-danger', 'alert-success');
+                    connectionStatus.classList.add('alert-info');
+                    connectionStatus.textContent = 'Connecting...';
+
+                    await connection.start();
+                    console.log("SignalR Connected.");
+                    
+                    // After connection is established, register connection
+                    await connection.invoke("RegisterConnection", "@Model.AgentId");
+                    
+                    connectionStatus.classList.remove('alert-info', 'alert-danger');
+                    connectionStatus.classList.add('alert-success');
+                    connectionStatus.textContent = 'Connected successfully!';
+                    setTimeout(() => {
+                        connectionStatus.classList.add('d-none');
+                    }, 2000);
+                } catch (err) {
+                    console.error("Connection failed:", err);
+                    connectionStatus.classList.remove('alert-info', 'alert-success');
+                    connectionStatus.classList.add('alert-danger');
+                    connectionStatus.textContent = 'Connection failed. Please refresh the page.';
+                }
+            }
+
+            // Handle connection state changes
+            connection.onreconnecting(() => {
+                console.log("Reconnecting...");
+                connectionStatus.classList.remove('d-none', 'alert-success');
+                connectionStatus.classList.add('alert-info');
+                connectionStatus.textContent = 'Connection lost. Reconnecting...';
+            });
+
+            connection.onreconnected(async () => {
+                console.log("Reconnected.");
+                await connection.invoke("RegisterConnection", "@Model.AgentId");
+                connectionStatus.classList.remove('alert-info', 'alert-danger');
+                connectionStatus.classList.add('alert-success');
+                connectionStatus.textContent = 'Reconnected successfully!';
+                setTimeout(() => {
+                    connectionStatus.classList.add('d-none');
+                }, 2000);
+            });
+
+            connection.onclose(() => {
+                console.log("Connection closed.");
+                connectionStatus.classList.remove('d-none', 'alert-info', 'alert-success');
+                connectionStatus.classList.add('alert-danger');
+                connectionStatus.textContent = 'Connection lost. Please refresh the page.';
+            });
+
+            // Handle new chat assignments
+            connection.on("NewChat", function () {
+                fetch('/AgentDashboard?handler=ActiveChats')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.querySelector('#activeChatsTableBody').innerHTML = html;
+                        attachChatButtonListeners();
+                    });
+            });
+
+            // Start the connection
+            start();
+        </script>
+    }
+} 

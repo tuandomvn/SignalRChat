@@ -1,0 +1,39 @@
+@model SignalRChat.Pages.AgentDashboardModel
+@{
+    Layout = "_PartialLayout";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Status</th>
+            <th>Duration</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var chat in Model.ActiveChats)
+        {
+            <tr>
+                <td>@chat.DisplayName</td>
+                <td>
+                    <span class="badge @(Model.GetUserConnectionStatus(chat) == "Connected" ? "bg-success" : "bg-danger")">
+                        @Model.GetUserConnectionStatus(chat)
+                    </span>
+                </td>
+                <td>@Model.GetChatDuration(chat)</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm open-chat me-2"
+                            data-chat-id="@chat.ChatId" data-username="@chat.DisplayName">
+                        Chat
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm end-chat-btn"
+                            data-chat-id="@chat.ChatId">
+                        End Chat
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 

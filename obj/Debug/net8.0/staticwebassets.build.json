@@ -1,0 +1,2700 @@
+{
+  "Version": 1,
+  "Hash": "Ha59Q4c8tgGBQnlExRVHHSLJ6kflGs9o1BQOMM1bao4=",
+  "Source": "SignalRChat",
+  "BasePath": "_content/SignalRChat",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SignalRChat\\wwwroot",
+      "Source": "SignalRChat",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "SignalRChat#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "kh5mj2lx0k",
+      "Integrity": "SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "SignalRChat#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "kh5mj2lx0k",
+      "Integrity": "SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\chat.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "chat#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4yvycx6gox",
+      "Integrity": "POaFoZbXl5YXBD7aZmBsP5iYbTkkIbcaqqKUdX8tOjg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\chat.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\css\\site.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k7ga47lkjw",
+      "Integrity": "kMBEBTkiuv46drw7wwcBH/QtB6Ew9N6zm0golyJhLpY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\favicon.ico",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "favicon#[.{fingerprint}]?.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "61n19gt1b8",
+      "Integrity": "Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "js/signalr/dist/browser/signalr#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xazbho2zi9",
+      "Integrity": "eXgSr/fvmrgXsHyGwayl5ykyMhwA/N+zNPG3c6DF8ug=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\site.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bnkqy1y0r8",
+      "Integrity": "BxFAw9RUJ1E4NycpKEjCNDeoSvr4RPHixdBq5wDnkeY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mpyigms19s",
+      "Integrity": "xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ve6x09088i",
+      "Integrity": "SZ2mKaD4A+b+HIvttwl+TvLFnVy8o8/X40j+EKVwyvY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "agp80tu62r",
+      "Integrity": "JtktgiuQAd+AXerCnPMrHCDz1h5AtkH5tobvpuG7xZ4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "q2ku51ktnl",
+      "Integrity": "3vUJkZSpKL/zG7x6GNvDjs0TxYUo9zMt6dAc8hp9CVo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7na4sro3qu",
+      "Integrity": "4zbWr0QNFhpUwGkn4WdGWXt80KnhRFv0qXkZyVnhajY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0wve5yxp74",
+      "Integrity": "8NXw3kF49FkQVPMdjnGDqoXXRU0TwzsLfCGbK9U8gnk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tey0rigmnh",
+      "Integrity": "NbFZxZLmBVNLzb/7B0WdFfb6+8jXHGX6XY190uwgbec=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b4skse8du6",
+      "Integrity": "peAGH8Gu/ZL9VnbUGSMN69Ji5MxwbvOb53gDXU2cPaQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l2av4jpuoj",
+      "Integrity": "vQTf4d3WJi9vmWQNA4kJnjoedgEhMFXFDEMXqtHtgzk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "m39kt2b5c9",
+      "Integrity": "EuDXUJYKnfZuO8dSLN0f5iVbVasz36AROuAU3NJ3JBo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/dist/js/bootstrap#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o4kw7cc6tf",
+      "Integrity": "6IStRQerBchYSw6J2GWTOWGOnDRrWXmaG0r6nCwN5s4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/bootstrap/LICENSE#[.{fingerprint}]?",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z6qzljqjd0",
+      "Integrity": "WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/jquery/dist/jquery#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vwa26bmbsk",
+      "Integrity": "QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rkkog0v3vw",
+      "Integrity": "Kz7YukJEI6ULAj5yhTDZS8OFz8fDKK1lo9/unHwFMcU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/jquery-validation/dist/additional-methods#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o2fui7xoca",
+      "Integrity": "0IXY0aA9BMZHp1azQSgmyQTG4+8NwTeDlKmjpQYrcXs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/jquery-validation/dist/jquery.validate#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jdpnbaa6vo",
+      "Integrity": "yazfaIh2SXu8rPenyD2f36pKgrkv5XT+DQCDpZ/eDao=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/jquery-validation/LICENSE#[.{fingerprint}]?.md",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xzw0cte36n",
+      "Integrity": "85iHjKszi4aWOL2sGurna/OsEbK4nabgtovBpkVzNEA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0td7jq9nxb",
+      "Integrity": "XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "SourceId": "SignalRChat",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "BasePath": "_content/SignalRChat",
+      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4ez5mqxv2b",
+      "Integrity": "bJBFwc85FxNITit+4+dmzq5fRpbBEauvU+1eI+EpziQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "chat.4yvycx6gox.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\chat.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1346"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"POaFoZbXl5YXBD7aZmBsP5iYbTkkIbcaqqKUdX8tOjg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4yvycx6gox"
+        },
+        {
+          "Name": "label",
+          "Value": "chat.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-POaFoZbXl5YXBD7aZmBsP5iYbTkkIbcaqqKUdX8tOjg="
+        }
+      ]
+    },
+    {
+      "Route": "chat.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\chat.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1346"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"POaFoZbXl5YXBD7aZmBsP5iYbTkkIbcaqqKUdX8tOjg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-POaFoZbXl5YXBD7aZmBsP5iYbTkkIbcaqqKUdX8tOjg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2339"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kMBEBTkiuv46drw7wwcBH/QtB6Ew9N6zm0golyJhLpY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 02:11:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kMBEBTkiuv46drw7wwcBH/QtB6Ew9N6zm0golyJhLpY="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.k7ga47lkjw.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2339"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kMBEBTkiuv46drw7wwcBH/QtB6Ew9N6zm0golyJhLpY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 02:11:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k7ga47lkjw"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kMBEBTkiuv46drw7wwcBH/QtB6Ew9N6zm0golyJhLpY="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.61n19gt1b8.ico",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5430"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "61n19gt1b8"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5430"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr/dist/browser/signalr.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eXgSr/fvmrgXsHyGwayl5ykyMhwA/N+zNPG3c6DF8ug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eXgSr/fvmrgXsHyGwayl5ykyMhwA/N+zNPG3c6DF8ug="
+        }
+      ]
+    },
+    {
+      "Route": "js/signalr/dist/browser/signalr.xazbho2zi9.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eXgSr/fvmrgXsHyGwayl5ykyMhwA/N+zNPG3c6DF8ug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xazbho2zi9"
+        },
+        {
+          "Name": "label",
+          "Value": "js/signalr/dist/browser/signalr.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eXgSr/fvmrgXsHyGwayl5ykyMhwA/N+zNPG3c6DF8ug="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.bnkqy1y0r8.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "226"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BxFAw9RUJ1E4NycpKEjCNDeoSvr4RPHixdBq5wDnkeY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bnkqy1y0r8"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BxFAw9RUJ1E4NycpKEjCNDeoSvr4RPHixdBq5wDnkeY="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "226"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BxFAw9RUJ1E4NycpKEjCNDeoSvr4RPHixdBq5wDnkeY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BxFAw9RUJ1E4NycpKEjCNDeoSvr4RPHixdBq5wDnkeY="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "204136"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.mpyigms19s.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "204136"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mpyigms19s"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xlexqj9/k3uobVwGfciZcj/eDdooaNgcf4OFLtLUygM="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "203803"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SZ2mKaD4A+b+HIvttwl+TvLFnVy8o8/X40j+EKVwyvY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SZ2mKaD4A+b+HIvttwl+TvLFnVy8o8/X40j+EKVwyvY="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap.rtl.ve6x09088i.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "203803"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SZ2mKaD4A+b+HIvttwl+TvLFnVy8o8/X40j+EKVwyvY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ve6x09088i"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.rtl.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SZ2mKaD4A+b+HIvttwl+TvLFnVy8o8/X40j+EKVwyvY="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-grid.agp80tu62r.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JtktgiuQAd+AXerCnPMrHCDz1h5AtkH5tobvpuG7xZ4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "agp80tu62r"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-grid.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JtktgiuQAd+AXerCnPMrHCDz1h5AtkH5tobvpuG7xZ4="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-grid.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70538"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JtktgiuQAd+AXerCnPMrHCDz1h5AtkH5tobvpuG7xZ4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JtktgiuQAd+AXerCnPMrHCDz1h5AtkH5tobvpuG7xZ4="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70612"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3vUJkZSpKL/zG7x6GNvDjs0TxYUo9zMt6dAc8hp9CVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3vUJkZSpKL/zG7x6GNvDjs0TxYUo9zMt6dAc8hp9CVo="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.q2ku51ktnl.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70612"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3vUJkZSpKL/zG7x6GNvDjs0TxYUo9zMt6dAc8hp9CVo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q2ku51ktnl"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3vUJkZSpKL/zG7x6GNvDjs0TxYUo9zMt6dAc8hp9CVo="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.7na4sro3qu.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5850"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4zbWr0QNFhpUwGkn4WdGWXt80KnhRFv0qXkZyVnhajY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7na4sro3qu"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4zbWr0QNFhpUwGkn4WdGWXt80KnhRFv0qXkZyVnhajY="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5850"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4zbWr0QNFhpUwGkn4WdGWXt80KnhRFv0qXkZyVnhajY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4zbWr0QNFhpUwGkn4WdGWXt80KnhRFv0qXkZyVnhajY="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.0wve5yxp74.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5827"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8NXw3kF49FkQVPMdjnGDqoXXRU0TwzsLfCGbK9U8gnk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0wve5yxp74"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8NXw3kF49FkQVPMdjnGDqoXXRU0TwzsLfCGbK9U8gnk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5827"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8NXw3kF49FkQVPMdjnGDqoXXRU0TwzsLfCGbK9U8gnk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8NXw3kF49FkQVPMdjnGDqoXXRU0TwzsLfCGbK9U8gnk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71584"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NbFZxZLmBVNLzb/7B0WdFfb6+8jXHGX6XY190uwgbec=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NbFZxZLmBVNLzb/7B0WdFfb6+8jXHGX6XY190uwgbec="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.b4skse8du6.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"peAGH8Gu/ZL9VnbUGSMN69Ji5MxwbvOb53gDXU2cPaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b4skse8du6"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-peAGH8Gu/ZL9VnbUGSMN69Ji5MxwbvOb53gDXU2cPaQ="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71451"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"peAGH8Gu/ZL9VnbUGSMN69Ji5MxwbvOb53gDXU2cPaQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-peAGH8Gu/ZL9VnbUGSMN69Ji5MxwbvOb53gDXU2cPaQ="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/css/bootstrap-utilities.tey0rigmnh.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "71584"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NbFZxZLmBVNLzb/7B0WdFfb6+8jXHGX6XY190uwgbec=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tey0rigmnh"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap-utilities.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NbFZxZLmBVNLzb/7B0WdFfb6+8jXHGX6XY190uwgbec="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "208492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vQTf4d3WJi9vmWQNA4kJnjoedgEhMFXFDEMXqtHtgzk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vQTf4d3WJi9vmWQNA4kJnjoedgEhMFXFDEMXqtHtgzk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/js/bootstrap.bundle.l2av4jpuoj.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "208492"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vQTf4d3WJi9vmWQNA4kJnjoedgEhMFXFDEMXqtHtgzk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l2av4jpuoj"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/js/bootstrap.bundle.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vQTf4d3WJi9vmWQNA4kJnjoedgEhMFXFDEMXqtHtgzk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/js/bootstrap.esm.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "139019"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EuDXUJYKnfZuO8dSLN0f5iVbVasz36AROuAU3NJ3JBo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EuDXUJYKnfZuO8dSLN0f5iVbVasz36AROuAU3NJ3JBo="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/js/bootstrap.esm.m39kt2b5c9.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "139019"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EuDXUJYKnfZuO8dSLN0f5iVbVasz36AROuAU3NJ3JBo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "m39kt2b5c9"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/js/bootstrap.esm.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EuDXUJYKnfZuO8dSLN0f5iVbVasz36AROuAU3NJ3JBo="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/js/bootstrap.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "148168"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6IStRQerBchYSw6J2GWTOWGOnDRrWXmaG0r6nCwN5s4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6IStRQerBchYSw6J2GWTOWGOnDRrWXmaG0r6nCwN5s4="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/dist/js/bootstrap.o4kw7cc6tf.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "148168"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6IStRQerBchYSw6J2GWTOWGOnDRrWXmaG0r6nCwN5s4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o4kw7cc6tf"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/js/bootstrap.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6IStRQerBchYSw6J2GWTOWGOnDRrWXmaG0r6nCwN5s4="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/LICENSE",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A="
+        }
+      ]
+    },
+    {
+      "Route": "lib/bootstrap/LICENSE.z6qzljqjd0",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z6qzljqjd0"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/LICENSE"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WzAxfJw1u28FEBxQHehmzGhSq5tlXc9ZQXM/ZkTD69A="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/dist/jquery.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "287630"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/dist/jquery.vwa26bmbsk.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "287630"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vwa26bmbsk"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/dist/jquery.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.rkkog0v3vw.txt",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kz7YukJEI6ULAj5yhTDZS8OFz8fDKK1lo9/unHwFMcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rkkog0v3vw"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Kz7YukJEI6ULAj5yhTDZS8OFz8fDKK1lo9/unHwFMcU="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery/LICENSE.txt",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kz7YukJEI6ULAj5yhTDZS8OFz8fDKK1lo9/unHwFMcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Kz7YukJEI6ULAj5yhTDZS8OFz8fDKK1lo9/unHwFMcU="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/dist/additional-methods.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42027"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0IXY0aA9BMZHp1azQSgmyQTG4+8NwTeDlKmjpQYrcXs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0IXY0aA9BMZHp1azQSgmyQTG4+8NwTeDlKmjpQYrcXs="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/dist/additional-methods.o2fui7xoca.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42027"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0IXY0aA9BMZHp1azQSgmyQTG4+8NwTeDlKmjpQYrcXs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o2fui7xoca"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation/dist/additional-methods.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0IXY0aA9BMZHp1azQSgmyQTG4+8NwTeDlKmjpQYrcXs="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/dist/jquery.validate.jdpnbaa6vo.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "48676"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yazfaIh2SXu8rPenyD2f36pKgrkv5XT+DQCDpZ/eDao=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jdpnbaa6vo"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation/dist/jquery.validate.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yazfaIh2SXu8rPenyD2f36pKgrkv5XT+DQCDpZ/eDao="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/dist/jquery.validate.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "48676"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yazfaIh2SXu8rPenyD2f36pKgrkv5XT+DQCDpZ/eDao=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yazfaIh2SXu8rPenyD2f36pKgrkv5XT+DQCDpZ/eDao="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.md",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1095"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"85iHjKszi4aWOL2sGurna/OsEbK4nabgtovBpkVzNEA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-85iHjKszi4aWOL2sGurna/OsEbK4nabgtovBpkVzNEA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation/LICENSE.xzw0cte36n.md",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1095"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/markdown"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"85iHjKszi4aWOL2sGurna/OsEbK4nabgtovBpkVzNEA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xzw0cte36n"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation/LICENSE.md"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-85iHjKszi4aWOL2sGurna/OsEbK4nabgtovBpkVzNEA="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.0td7jq9nxb.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19366"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0td7jq9nxb"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19366"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.4ez5mqxv2b.txt",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "575"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bJBFwc85FxNITit+4+dmzq5fRpbBEauvU+1eI+EpziQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4ez5mqxv2b"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/jquery-validation-unobtrusive/LICENSE.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bJBFwc85FxNITit+4+dmzq5fRpbBEauvU+1eI+EpziQ="
+        }
+      ]
+    },
+    {
+      "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "575"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bJBFwc85FxNITit+4+dmzq5fRpbBEauvU+1eI+EpziQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 00:04:48 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bJBFwc85FxNITit+4+dmzq5fRpbBEauvU+1eI+EpziQ="
+        }
+      ]
+    },
+    {
+      "Route": "SignalRChat.bundle.scp.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1128"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 02:01:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w="
+        }
+      ]
+    },
+    {
+      "Route": "SignalRChat.kh5mj2lx0k.bundle.scp.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1128"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 02:01:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kh5mj2lx0k"
+        },
+        {
+          "Name": "label",
+          "Value": "SignalRChat.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w="
+        }
+      ]
+    },
+    {
+      "Route": "SignalRChat.kh5mj2lx0k.styles.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1128"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 02:01:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kh5mj2lx0k"
+        },
+        {
+          "Name": "label",
+          "Value": "SignalRChat.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w="
+        }
+      ]
+    },
+    {
+      "Route": "SignalRChat.styles.css",
+      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1128"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 17 Apr 2025 02:01:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w="
+        }
+      ]
+    }
+  ]
+}
