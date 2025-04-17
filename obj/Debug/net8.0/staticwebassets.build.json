@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ha59Q4c8tgGBQnlExRVHHSLJ6kflGs9o1BQOMM1bao4=",
+  "Hash": "xYg32K8y7u9EZNF+hGNB9aEgF3ggCGyIVfeZSOkK3s0=",
   "Source": "SignalRChat",
   "BasePath": "_content/SignalRChat",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "SignalRChat\\wwwroot",
       "Source": "SignalRChat",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
       "SourceId": "SignalRChat",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "SignalRChat#[.{fingerprint}]?.styles.css",
       "AssetKind": "All",
@@ -35,13 +35,13 @@
       "Integrity": "SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css"
+      "OriginalItemSpec": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
       "SourceId": "SignalRChat",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "SignalRChat#[.{fingerprint}]!.bundle.scp.css",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "Integrity": "SJC+ppWOsm8+BB29gD8Q45L3VZHJu/Zr6aUF7rpvC6w=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css"
+      "OriginalItemSpec": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\chat.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\chat.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "chat#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\chat.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\css\\site.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\css\\site.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "css/site#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\favicon.ico",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "favicon#[.{fingerprint}]?.ico",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "js/signalr/dist/browser/signalr#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -143,10 +143,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\site.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\js\\site.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "js/site#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -164,10 +164,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -185,10 +185,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -206,10 +206,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -227,10 +227,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -248,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -269,10 +269,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -290,10 +290,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -311,10 +311,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl#[.{fingerprint}]?.css",
       "AssetKind": "All",
@@ -332,10 +332,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -353,10 +353,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -395,10 +395,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/bootstrap/LICENSE#[.{fingerprint}]?",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/jquery/dist/jquery#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -437,10 +437,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/jquery/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -458,10 +458,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/jquery-validation/dist/additional-methods#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -479,10 +479,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -500,10 +500,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/jquery-validation/LICENSE#[.{fingerprint}]?.md",
       "AssetKind": "All",
@@ -521,10 +521,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive#[.{fingerprint}]?.js",
       "AssetKind": "All",
@@ -542,10 +542,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "SignalRChat",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\",
+      "ContentRoot": "D:\\Work\\2025\\SignalRChat\\wwwroot\\",
       "BasePath": "_content/SignalRChat",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE#[.{fingerprint}]?.txt",
       "AssetKind": "All",
@@ -566,7 +566,7 @@
   "Endpoints": [
     {
       "Route": "chat.4yvycx6gox.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\chat.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\chat.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -611,7 +611,7 @@
     },
     {
       "Route": "chat.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\chat.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\chat.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -648,7 +648,7 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\css\\site.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -685,7 +685,7 @@
     },
     {
       "Route": "css/site.k7ga47lkjw.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\css\\site.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -730,7 +730,7 @@
     },
     {
       "Route": "favicon.61n19gt1b8.ico",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\favicon.ico",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -775,7 +775,7 @@
     },
     {
       "Route": "favicon.ico",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\favicon.ico",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\favicon.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -812,7 +812,7 @@
     },
     {
       "Route": "js/signalr/dist/browser/signalr.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -849,7 +849,7 @@
     },
     {
       "Route": "js/signalr/dist/browser/signalr.xazbho2zi9.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -894,7 +894,7 @@
     },
     {
       "Route": "js/site.bnkqy1y0r8.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\site.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -939,7 +939,7 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\js\\site.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -976,7 +976,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1013,7 +1013,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.mpyigms19s.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1058,7 +1058,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1095,7 +1095,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap.rtl.ve6x09088i.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1140,7 +1140,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.agp80tu62r.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1185,7 +1185,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1222,7 +1222,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1259,7 +1259,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-grid.rtl.q2ku51ktnl.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1304,7 +1304,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.7na4sro3qu.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1349,7 +1349,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1386,7 +1386,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.0wve5yxp74.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1431,7 +1431,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1468,7 +1468,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1505,7 +1505,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.b4skse8du6.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1550,7 +1550,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1587,7 +1587,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/css/bootstrap-utilities.tey0rigmnh.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1632,7 +1632,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1669,7 +1669,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.bundle.l2av4jpuoj.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1714,7 +1714,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1751,7 +1751,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.esm.m39kt2b5c9.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1796,7 +1796,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1833,7 +1833,7 @@
     },
     {
       "Route": "lib/bootstrap/dist/js/bootstrap.o4kw7cc6tf.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1878,7 +1878,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1915,7 +1915,7 @@
     },
     {
       "Route": "lib/bootstrap/LICENSE.z6qzljqjd0",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\bootstrap\\LICENSE",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1960,7 +1960,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1997,7 +1997,7 @@
     },
     {
       "Route": "lib/jquery/dist/jquery.vwa26bmbsk.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2042,7 +2042,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.rkkog0v3vw.txt",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2087,7 +2087,7 @@
     },
     {
       "Route": "lib/jquery/LICENSE.txt",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2124,7 +2124,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2161,7 +2161,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/additional-methods.o2fui7xoca.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2206,7 +2206,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.jdpnbaa6vo.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2251,7 +2251,7 @@
     },
     {
       "Route": "lib/jquery-validation/dist/jquery.validate.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2288,7 +2288,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.md",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2325,7 +2325,7 @@
     },
     {
       "Route": "lib/jquery-validation/LICENSE.xzw0cte36n.md",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2370,7 +2370,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.0td7jq9nxb.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2415,7 +2415,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2452,7 +2452,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.4ez5mqxv2b.txt",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2497,7 +2497,7 @@
     },
     {
       "Route": "lib/jquery-validation-unobtrusive/LICENSE.txt",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2534,7 +2534,7 @@
     },
     {
       "Route": "SignalRChat.bundle.scp.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2571,7 +2571,7 @@
     },
     {
       "Route": "SignalRChat.kh5mj2lx0k.bundle.scp.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SignalRChat.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2616,7 +2616,7 @@
     },
     {
       "Route": "SignalRChat.kh5mj2lx0k.styles.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2661,7 +2661,7 @@
     },
     {
       "Route": "SignalRChat.styles.css",
-      "AssetFile": "D:\\Work\\MoneyBase\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
+      "AssetFile": "D:\\Work\\2025\\SignalRChat\\obj\\Debug\\net8.0\\scopedcss\\bundle\\SignalRChat.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
