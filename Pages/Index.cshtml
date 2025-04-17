@@ -166,21 +166,6 @@
             
             // Add a final system message
             addMessage("System", message);
-            
-            // Reload the page after a short delay
-            setTimeout(() => {
-                location.reload();
-            }, 3000);
         });
-
-        window.onbeforeunload = async () => {
-            if (isConnected) {
-                try {
-                    await connection.stop();
-                } catch (err) {
-                    console.error(err);
-                }
-            }
-        };
     </script>
 }

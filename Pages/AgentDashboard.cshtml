@@ -278,7 +278,15 @@
                     if (confirm('Are you sure you want to end this chat?')) {
                         try {
                             await connection.invoke("EndChat", chatId);
-                            // Modal and active chats table will be updated by the ChatEnded event handler
+                            // Manually close and remove the modal
+                            const modalInstance = bootstrap.Modal.getInstance(modal);
+                            if (modalInstance) {
+                                modalInstance.hide();
+                            }
+                            modal.remove();
+                            minimizedButton.remove();
+                            // Refresh active chats table
+                            await refreshActiveChats();
                         } catch (err) {
                             console.error("Error ending chat:", err);
                             alert("Error ending chat. Please try again.");
@@ -332,8 +340,30 @@
                     button.addEventListener('click', async function() {
                         const chatId = this.getAttribute('data-chat-id');
                         if (confirm('Are you sure you want to end this chat?')) {
-                            await connection.invoke("EndChat", chatId);
-                            await refreshActiveChats(); // Refresh the table after ending chat
+                            try {
+                                await connection.invoke("EndChat", chatId);
+                                
+                                // Find and close the chat modal
+                                const modal = document.getElementById(`chatModal_${chatId}`);
+                                if (modal) {
+                                    const modalInstance = bootstrap.Modal.getInstance(modal);
+                                    if (modalInstance) {
+                                        modalInstance.hide();
+                                    }
+                                    modal.remove();
+                                }
+
+                                // Remove minimized chat button if exists
+                                const minimizedButton = document.querySelector(`.minimized-chat[data-chat-id="${chatId}"]`);
+                                if (minimizedButton) {
+                                    minimizedButton.remove();
+                                }
+
+                                await refreshActiveChats(); // Refresh the table after ending chat
+                            } catch (error) {
+                                console.error('Error ending chat:', error);
+                                alert('Failed to end chat. Please try again.');
+                            }
                         }
                     });
                 });
