@@ -39,13 +39,13 @@ public class ChatHub : Hub
     }
 
     //When user want to starts a chat
-    public async Task<bool> AttemptToConnect(string displayName)
+    public bool AttemptToConnect(string displayName)
     {
         var connectionId = Context.ConnectionId;
 
         // Save attempt
-        await _dataRepostory.SaveConnectionAttempt(connectionId, displayName);
-
+        _dataRepostory.SaveConnectionAttempt(connectionId, displayName);
+        Task.Delay(500);
         return true;
     }
 
@@ -53,12 +53,12 @@ public class ChatHub : Hub
     public async Task StartChat(string displayName)
     {
         // Check if we have enough attempts
-        var attempts = await _dataRepostory.GetConnectionAttemptsCount(Context.ConnectionId);
-        if (attempts < _maxConnectionAttempt)
-        {
-            await Clients.Caller.SendAsync("NoChatAssigned", "Please complete all connection attempts first.");
-            return;
-        }
+        //var attempts = await _dataRepostory.GetConnectionAttemptsCount(Context.ConnectionId);
+        //if (attempts < _maxConnectionAttempt)
+        //{
+        //    await Clients.Caller.SendAsync("NoChatAssigned", "Please complete all connection attempts first.");
+        //    return;
+        //}
 
         // Check if user already has an active chat
         var existingChat = _dataRepostory.GetActiveChatByConnectionId(Context.ConnectionId);

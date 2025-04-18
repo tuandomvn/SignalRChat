@@ -4,11 +4,11 @@ namespace SignalRChat.Services;
 
 public class AgentChatCoordinatorService : IAgentChatCoordinatorService
 {
-    private readonly IDataRepository _chatAssignment;
+    private readonly IDataRepository _dataRepository;
 
-    public AgentChatCoordinatorService(IDataRepository chatAssignment)
+    public AgentChatCoordinatorService(IDataRepository dataRepository)
     {
-        _chatAssignment = chatAssignment;
+        _dataRepository = dataRepository;
     }
 
     private int GetMaxChatsForSeniority(AgentSeniority seniority)
@@ -42,7 +42,7 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
             .Select(a => new
             {
                 Agent = a,
-                ChatCount = _chatAssignment.GetAgentActiveChats(a.AgentId).Count()
+                ChatCount = _dataRepository.GetAgentActiveChats(a.AgentId).Count()
             })
             .OrderBy(x => x.ChatCount) // Sort by current chat count
             .Select(x => x.Agent);
@@ -67,7 +67,7 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
 
                 foreach (var agent in agentsAtLevel)
                 {
-                    var activeChats = _chatAssignment.GetAgentActiveChats(agent.AgentId).Count();
+                    var activeChats = _dataRepository.GetAgentActiveChats(agent.AgentId).Count();
                     var maxChats = GetMaxChatsForSeniority(level);
 
                     if (activeChats < maxChats)
@@ -81,12 +81,11 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
                             UserId = connectionId,
                             UserConnectionId = connectionId,
                             DisplayName = displayName,
-                            TeamId = currentTeam.TeamId,
                             AgentConnectionId = null, // Will be set when agent joins the chat
                             IsActive = true
                         };
 
-                        if (_chatAssignment.AddActiveChat(chat))
+                        if (_dataRepository.AddActiveChat(chat))
                         {
                             return chat;
                         }
@@ -100,7 +99,7 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
 
     public Team? GetAvailableTeam(TimeSpan currentTime)
     {
-        var teams = _chatAssignment.GetAllTeams();
+        var teams = _dataRepository.GetAllTeams();
 
         // Find current active team based on time
         var currentTeam = GetCurrentPrimaryTeam(currentTime, teams);
@@ -127,6 +126,6 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
         if (team == null)
             return -1;
 
-        return _chatAssignment.GetTeamActiveChats(team.TeamId).Count();
+        return _dataRepository.GetTeamActiveChats(team.TeamId).Count();
     }
 }

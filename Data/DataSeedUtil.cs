@@ -15,11 +15,11 @@ public class DataSeedUtil
     public void CleanupActiveChats()
     {
         // Get all chats
-        var chats = _context.Chats.ToList();
+        var chats = _context.AssigningChats.Where(c => c.IsActive).ToList();
         if (chats.Any())
         {
             // Remove all chats
-            _context.Chats.RemoveRange(chats);
+            _context.AssigningChats.RemoveRange(chats);
             _context.SaveChanges();
         }
 

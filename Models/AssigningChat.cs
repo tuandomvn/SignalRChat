@@ -14,8 +14,6 @@ public class AssigningChat
     public string DisplayName { get; set; } = "";
     public string? UserConnectionId { get; set; }
     public string? AgentConnectionId { get; set; }
-    public string TeamId { get; set; } = "";
-    public Team? Team { get; set; }
     public DateTime AssignedTime { get; set; } = DateTime.UtcNow;
     
     [Required]

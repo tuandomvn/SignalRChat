@@ -68,7 +68,6 @@ public class AgentChatCoordinatorServiceTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal("junior1", result.AgentId);
-        Assert.Equal("team1", result.TeamId);
         Assert.Equal("connection1", result.UserConnectionId);
         Assert.Equal("User1", result.DisplayName);
         Assert.True(result.IsActive);
@@ -124,7 +123,6 @@ public class AgentChatCoordinatorServiceTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal("mid1", result.AgentId);
-        Assert.Equal("team1", result.TeamId);
     }
 
     [Fact]

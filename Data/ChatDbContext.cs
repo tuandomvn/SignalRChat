@@ -11,7 +11,7 @@ public class ChatDbContext : DbContext
 
     public DbSet<Agent> Agents => Set<Agent>();
     public DbSet<Team> Teams => Set<Team>();
-    public DbSet<AssigningChat> Chats => Set<AssigningChat>();
+    public DbSet<AssigningChat> AssigningChats => Set<AssigningChat>();
     public DbSet<AgentConnection> AgentConnections => Set<AgentConnection>();
     public DbSet<ChatMessage> ChatMessages => Set<ChatMessage>();
     public DbSet<ConnectionAttempt> ConnectionAttempts => Set<ConnectionAttempt>();
@@ -21,6 +21,7 @@ public class ChatDbContext : DbContext
         // Configure boolean fields for SQLite
         modelBuilder.Entity<AssigningChat>(entity =>
         {
+            entity.ToTable("AssigningChats");
             entity.Property(e => e.IsActive)
                 .IsRequired()  // NOT NULL
                 .HasDefaultValue(1)  // Default value in SQLite (1 for true)
@@ -37,11 +38,6 @@ public class ChatDbContext : DbContext
             .HasOne(c => c.Agent)
             .WithMany(a => a.ActiveChats)
             .HasForeignKey(c => c.AgentId);
-
-        modelBuilder.Entity<AssigningChat>()
-            .HasOne(c => c.Team)
-            .WithMany(t => t.ActiveChats)
-            .HasForeignKey(c => c.TeamId);
 
         modelBuilder.Entity<AgentConnection>()
             .HasOne(c => c.Agent)

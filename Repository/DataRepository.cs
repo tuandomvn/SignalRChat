@@ -167,7 +167,7 @@ public class DataRepository : IDataRepository
         var agent = team.Agents
             .Where(a => a.IsAvailable)
             .OrderByDescending(a => a.Seniority)
-            .ThenBy(a => context.Chats.Count(c => c.AgentId == a.AgentId && c.IsActive))
+            .ThenBy(a => context.AssigningChats.Count(c => c.AgentId == a.AgentId && c.IsActive))
             .FirstOrDefault();
 
         // If no agents available in the primary team and it's not the overflow team,
@@ -183,7 +183,7 @@ public class DataRepository : IDataRepository
                 agent = overflowTeam.Agents
                     .Where(a => a.IsAvailable)
                     .OrderByDescending(a => a.Seniority)
-                    .ThenBy(a => context.Chats.Count(c => c.AgentId == a.AgentId && c.IsActive))
+                    .ThenBy(a => context.AssigningChats.Count(c => c.AgentId == a.AgentId && c.IsActive))
                     .FirstOrDefault();
             }
         }
@@ -194,7 +194,7 @@ public class DataRepository : IDataRepository
     public bool EndChat(string chatId)
     {
         using var context = GetContext();
-        var chat = context.Chats.FirstOrDefault(c => c.ChatId == chatId);
+        var chat = context.AssigningChats.FirstOrDefault(c => c.ChatId == chatId);
         if (chat != null)
         {
             chat.IsActive = false;
@@ -207,7 +207,7 @@ public class DataRepository : IDataRepository
     public IEnumerable<AssigningChat> GetAgentActiveChats(string agentId)
     {
         using var context = GetContext();
-        var chats = context.Chats
+        var chats = context.AssigningChats
             .Where(c => c.AgentId == agentId && c.IsActive)
             .ToList();
 
@@ -223,8 +223,15 @@ public class DataRepository : IDataRepository
     public IEnumerable<AssigningChat> GetTeamActiveChats(string teamId)
     {
         using var context = GetContext();
-        return context.Chats
-            .Where(c => c.TeamId == teamId && c.IsActive)
+        var team = context.Teams
+            .Include(t => t.Agents)
+            .FirstOrDefault(t => t.TeamId == teamId);
+            
+        if (team == null) return Enumerable.Empty<AssigningChat>();
+        
+        var agentIds = team.Agents.Select(a => a.AgentId);
+        return context.AssigningChats
+            .Where(c => agentIds.Contains(c.AgentId) && c.IsActive)
             .ToList();
     }
 
@@ -254,18 +261,17 @@ public class DataRepository : IDataRepository
         // Get data first, then sort in memory
         var teams = context.Teams
             .Include(t => t.Agents)
-            .ToList(); // Execute query and bring data to memory
+            .ToList();
 
-        // Sort in memory (LINQ to Objects)
         return teams
-            .OrderBy(t => t.Shift == ShiftType.Overflow)
-            .ThenBy(t => t.ShiftStartTime.TotalMinutes);
+            .OrderBy(t => t.Shift == ShiftType.Overflow ? 1 : 0) // Overflow teams go last
+            .ThenBy(t => t.ShiftStartTime.TotalMinutes); // Then sort by shift start time
     }
 
     public AssigningChat? GetActiveChatByConnectionId(string connectionId)
     {
         using var context = GetContext();
-        return context.Chats
+        return context.AssigningChats
             .Include(c => c.Agent)
             .FirstOrDefault(c => (c.UserConnectionId == connectionId || c.AgentConnectionId == connectionId)
             && c.IsActive);
@@ -312,7 +318,7 @@ public class DataRepository : IDataRepository
         if (agent != null)
         {
             // End all active chats for this agent
-            var agentChats = context.Chats
+            var agentChats = context.AssigningChats
                 .Where(c => c.AgentId == agentId && c.IsActive)
                 .ToList();
             Console.WriteLine($"[RemoveAgent] Found {agentChats.Count} active chats for agent {agentId}");
@@ -354,7 +360,7 @@ public class DataRepository : IDataRepository
         using var context = GetContext();
         Console.WriteLine($"[AddActiveChat] Adding new chat {chat.ChatId} with IsActive={chat.IsActive}");
 
-        if (context.Chats.Any(c => c.ChatId == chat.ChatId))
+        if (context.AssigningChats.Any(c => c.ChatId == chat.ChatId))
         {
             Console.WriteLine($"[AddActiveChat] Chat {chat.ChatId} already exists");
             return false;
@@ -364,7 +370,7 @@ public class DataRepository : IDataRepository
         chat.IsActive = true;
         Console.WriteLine($"[AddActiveChat] Ensured IsActive is true for chat {chat.ChatId}");
 
-        context.Chats.Add(chat);
+        context.AssigningChats.Add(chat);
         try
         {
             context.SaveChanges();
@@ -374,7 +380,7 @@ public class DataRepository : IDataRepository
             Console.WriteLine($"[AddActiveChat] After save - Chat {chat.ChatId} IsActive: {chat.IsActive}");
 
             // Double check by querying
-            var savedChat = context.Chats
+            var savedChat = context.AssigningChats
                 .AsNoTracking()
                 .FirstOrDefault(c => c.ChatId == chat.ChatId);
             Console.WriteLine($"[AddActiveChat] Queried from db - Chat {chat.ChatId} IsActive: {savedChat?.IsActive}");
@@ -391,7 +397,7 @@ public class DataRepository : IDataRepository
     public AssigningChat? GetActiveChat(string chatId)
     {
         using var context = GetContext();
-        return context.Chats
+        return context.AssigningChats
             .Include(c => c.Agent)
             .FirstOrDefault(c => c.ChatId == chatId && c.IsActive);
     }
@@ -399,9 +405,9 @@ public class DataRepository : IDataRepository
     public IEnumerable<AssigningChat> GetAllActiveChats()
     {
         using var context = GetContext();
-        var chats = context.Chats
+        var chats = context.AssigningChats
             .Include(c => c.Agent)
-            //.Where(c => c.IsActive)
+            .Where(c => c.IsActive)
             .ToList();
 
         Console.WriteLine($"Found {chats.Count} active chats");
@@ -423,7 +429,7 @@ public class DataRepository : IDataRepository
     public void UpdateChatAgentConnection(string chatId, string agentConnectionId)
     {
         using var context = GetContext();
-        var chat = context.Chats.FirstOrDefault(c => c.ChatId == chatId);
+        var chat = context.AssigningChats.FirstOrDefault(c => c.ChatId == chatId);
         if (chat != null)
         {
             chat.AgentConnectionId = agentConnectionId;
@@ -439,7 +445,7 @@ public class DataRepository : IDataRepository
         try
         {
             // Verify the chat exists and is active
-            var chat = await context.Chats
+            var chat = await context.AssigningChats
                 .FirstOrDefaultAsync(c => c.ChatId == message.ChatId && c.IsActive);
 
             if (chat == null)
@@ -480,7 +486,7 @@ public class DataRepository : IDataRepository
     public AssigningChat? GetActiveChatByDisplayName(string displayName)
     {
         using var context = GetContext();
-        return context.Chats
+        return context.AssigningChats
             .Include(c => c.Agent)
             .FirstOrDefault(c => c.DisplayName == displayName && c.IsActive);
     }
@@ -488,7 +494,7 @@ public class DataRepository : IDataRepository
     public async Task UpdateUserConnection(string chatId, string connectionId)
     {
         using var context = GetContext();
-        var chat = await context.Chats.FirstOrDefaultAsync(c => c.ChatId == chatId);
+        var chat = await context.AssigningChats.FirstOrDefaultAsync(c => c.ChatId == chatId);
         if (chat != null)
         {
             chat.UserConnectionId = connectionId;
@@ -499,7 +505,7 @@ public class DataRepository : IDataRepository
     public async Task UpdateChatDisplayName(string chatId, string displayName)
     {
         using var context = GetContext();
-        var chat = await context.Chats.FirstOrDefaultAsync(c => c.ChatId == chatId);
+        var chat = await context.AssigningChats.FirstOrDefaultAsync(c => c.ChatId == chatId);
         if (chat != null)
         {
             chat.DisplayName = displayName;

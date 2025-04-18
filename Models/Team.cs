@@ -13,5 +13,4 @@ public class Team
     public TimeSpan ShiftEndTime { get; set; }
     public bool IsActive { get; set; }
     public List<Agent> Agents { get; set; } = new();
-    public List<AssigningChat> ActiveChats { get; set; } = new();
 } 
