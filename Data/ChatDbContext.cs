@@ -52,7 +52,6 @@ public class ChatDbContext : DbContext
     {
         base.OnConfiguring(optionsBuilder);
         
-        // Enable detailed errors and sensitive data logging for debugging
         optionsBuilder
             .EnableDetailedErrors()
             .EnableSensitiveDataLogging();

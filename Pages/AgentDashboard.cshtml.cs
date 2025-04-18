@@ -11,9 +11,9 @@ namespace SignalRChat.Pages;
 [AllowAnonymous]
 public class AgentDashboardModel : PageModel
 {
-    private readonly IChatAPIService _chatAssignment;
+    private readonly IDataRepository _chatAssignment;
 
-    public AgentDashboardModel(IChatAPIService chatAssignment)
+    public AgentDashboardModel(IDataRepository chatAssignment)
     {
         _chatAssignment = chatAssignment;
     }

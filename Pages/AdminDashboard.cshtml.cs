@@ -9,9 +9,9 @@ namespace SignalRChat.Pages;
 [AllowAnonymous]
 public class AdminDashboardModel : PageModel
 {
-    private readonly ChatAPIService _chatAssignment;
+    private readonly DataRepository _chatAssignment;
 
-    public AdminDashboardModel(ChatAPIService chatAssignment)
+    public AdminDashboardModel(DataRepository chatAssignment)
     {
         _chatAssignment = chatAssignment;
     }

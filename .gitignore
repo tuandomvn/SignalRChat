@@ -4,3 +4,5 @@
 /SignalRChat/Properties/PublishProfiles
 /bin
 /obj
+SignalRChat.Tests/obj/project.nuget.cache
+/SignalRChat.Tests/obj

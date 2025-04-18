@@ -4,5 +4,6 @@ namespace SignalRChat.Services;
 
 public interface IAgentChatCoordinatorService
 {
-    AssigningChat? AssignUserToAgent(string connectionId, string displayName, TimeSpan currentTime);
+    Team? GetAvailableTeam(TimeSpan currentTime);
+    AssigningChat? AssignUserToAgent(string connectionId, string displayName, Team currentTeam);
 } 

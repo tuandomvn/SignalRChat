@@ -2,7 +2,7 @@ using SignalRChat.Models;
 
 namespace SignalRChat.Services;
 
-public interface IChatAPIService
+public interface IDataRepository
 {
     Agent? GetAgentById(string agentId);
     string? GetAgentConnectionId(string agentId);
@@ -17,15 +17,12 @@ public interface IChatAPIService
     Task<IEnumerable<ChatMessage>> GetChatHistory(string chatId);
     Task SaveChatMessage(ChatMessage message);
     void UpdateChatAgentConnection(string chatId, string agentConnectionId);
-    void DebugDatabaseContent();
     
-    // Add missing methods
     IEnumerable<AssigningChat> GetAgentActiveChats(string agentId);
     IEnumerable<Team> GetAllTeams();
     bool AddActiveChat(AssigningChat chat);
     IEnumerable<AssigningChat> GetTeamActiveChats(string teamId);
     Team? GetTeamById(string teamId);
-    bool RegisterTeam(Team team);
     bool AddAgentToTeam(string teamId, Agent agent);
     Agent? GetAvailableAgent(string? teamId = null);
     AssigningChat? GetActiveChatByDisplayName(string displayName);

@@ -149,6 +149,16 @@
             connectionStatus.textContent = message;
         });
 
+        connection.on("NoChatAssigned", (message) => {
+            connectionStatus.className = "alert alert-warning";
+            connectionStatus.textContent = message;
+            document.getElementById("chatArea").style.display = "none";
+            userInfoArea.style.display = "block";
+            isConnected = false;
+            currentChatId = null;
+            currentUserName = "";
+        });
+
         connection.on("NewChat", ({ chatId }) => {
             currentChatId = chatId;
         });

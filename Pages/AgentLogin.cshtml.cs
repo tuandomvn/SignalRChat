@@ -6,9 +6,9 @@ namespace SignalRChat.Pages;
 
 public class AgentLoginModel : PageModel
 {
-    private readonly IChatAPIService _chatAssignment;
+    private readonly IDataRepository _chatAssignment;
 
-    public AgentLoginModel(IChatAPIService chatAssignment)
+    public AgentLoginModel(IDataRepository chatAssignment)
     {
         _chatAssignment = chatAssignment;
     }

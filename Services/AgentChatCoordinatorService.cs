@@ -4,9 +4,9 @@ namespace SignalRChat.Services;
 
 public class AgentChatCoordinatorService : IAgentChatCoordinatorService
 {
-    private readonly IChatAPIService _chatAssignment;
+    private readonly IDataRepository _chatAssignment;
 
-    public AgentChatCoordinatorService(IChatAPIService chatAssignment)
+    public AgentChatCoordinatorService(IDataRepository chatAssignment)
     {
         _chatAssignment = chatAssignment;
     }
@@ -23,6 +23,18 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
         };
     }
 
+    public int CalculateTeamCapacity(Team team)
+    {
+        if (team == null || !team.Agents.Any())
+            return 0;
+
+        var baseCapacity = team.Agents
+            .Where(a => a.IsAvailable)
+            .Sum(a => GetMaxChatsForSeniority(a.Seniority));
+
+        return (int)Math.Floor(baseCapacity * 1.5);
+    }
+
     private IEnumerable<Agent> GetAvailableAgentsByLevel(Team team, AgentSeniority level)
     {
         return team.Agents
@@ -36,46 +48,23 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
             .Select(x => x.Agent);
     }
 
-    public AssigningChat? AssignUserToAgent(string connectionId, string displayName, TimeSpan currentTime)
+    public AssigningChat? AssignUserToAgent(string connectionId, string displayName, Team currentTeam)
     {
-        var teams = _chatAssignment.GetAllTeams();
-        
-        // Find current active team based on time
-        var currentTeam = teams.FirstOrDefault(t => 
-            t.IsActive && t.Shift != ShiftType.Overflow &&
-            t.ShiftStartTime <= currentTime && currentTime <= t.ShiftEndTime);
-
-        // If no current team is active, try overflow team
-        if (currentTeam == null)
-        {
-            currentTeam = teams.FirstOrDefault(t => t.IsActive && t.Shift == ShiftType.Overflow);
-        }
-
-        // If still no team available, return null
-        if (currentTeam == null)
-        {
-            Console.WriteLine("No active teams available at current time");
-            return null;
-        }
-
         // Try assigning to each seniority level in order
-        var seniorityLevels = new[]
-        {
-            AgentSeniority.Junior,
-            AgentSeniority.MidLevel,
-            AgentSeniority.Senior,
-            AgentSeniority.TeamLead
-        };
+        var seniorityLevels = Enum.GetValues(typeof(AgentSeniority))
+            .Cast<AgentSeniority>()
+            .OrderBy(s => (int)s)
+            .ToArray();
 
         foreach (var level in seniorityLevels)
         {
             //For ex: Junior1: 3 chats, Junior2: 4 chats, Junior3: 5 chats
             var agentsAtLevel = GetAvailableAgentsByLevel(currentTeam, level).ToList();
-            
+
             if (agentsAtLevel.Any())
             {
                 Console.WriteLine($"Found {agentsAtLevel.Count} available {level} agents in team {currentTeam.Name}");
-                
+
                 foreach (var agent in agentsAtLevel)
                 {
                     var activeChats = _chatAssignment.GetAgentActiveChats(agent.AgentId).Count();
@@ -108,4 +97,36 @@ public class AgentChatCoordinatorService : IAgentChatCoordinatorService
 
         return null;
     }
-} 
+
+    public Team? GetAvailableTeam(TimeSpan currentTime)
+    {
+        var teams = _chatAssignment.GetAllTeams();
+
+        // Find current active team based on time
+        var currentTeam = GetCurrentPrimaryTeam(currentTime, teams);
+        var activeChatCount = GetCurrentActiveChatsByTeam(currentTeam);
+
+        // If no current team is inactive, try overflow team
+        if (activeChatCount == -1 || activeChatCount >= CalculateTeamCapacity(currentTeam))
+        {
+            currentTeam = teams.FirstOrDefault(t => t.IsActive && t.Shift == ShiftType.Overflow);
+        }
+
+        return currentTeam;
+    }
+
+    private Team? GetCurrentPrimaryTeam(TimeSpan currentTime, IEnumerable<Team> teams)
+    {
+        return teams.FirstOrDefault(t =>
+            t.IsActive && t.Shift != ShiftType.Overflow &&
+            t.ShiftStartTime <= currentTime && currentTime <= t.ShiftEndTime);
+    }
+
+    public int GetCurrentActiveChatsByTeam(Team team)
+    {
+        if (team == null)
+            return -1;
+
+        return _chatAssignment.GetTeamActiveChats(team.TeamId).Count();
+    }
+}

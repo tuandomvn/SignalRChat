@@ -4,11 +4,11 @@ using SignalRChat.Data;
 
 namespace SignalRChat.Services;
 
-public class ChatAPIService : IChatAPIService
+public class DataRepository : IDataRepository
 {
     private readonly IServiceScopeFactory _scopeFactory;
 
-    public ChatAPIService(IServiceScopeFactory scopeFactory)
+    public DataRepository(IServiceScopeFactory scopeFactory)
     {
         _scopeFactory = scopeFactory;
     }
@@ -17,17 +17,6 @@ public class ChatAPIService : IChatAPIService
     {
         var scope = _scopeFactory.CreateScope();
         return scope.ServiceProvider.GetRequiredService<ChatDbContext>();
-    }
-
-    public bool RegisterTeam(Team team)
-    {
-        using var context = GetContext();
-        if (context.Teams.Any(t => t.TeamId == team.TeamId))
-            return false;
-            
-        context.Teams.Add(team);
-        context.SaveChanges();
-        return true;
     }
 
     public bool AddAgentToTeam(string teamId, Agent agent)
@@ -429,38 +418,6 @@ public class ChatAPIService : IChatAPIService
         using var context = GetContext();
         return context.AgentConnections
             .ToDictionary(c => c.ConnectionId, c => c.AgentId);
-    }
-
-    public void DebugDatabaseContent()
-    {
-        using var context = GetContext();
-        
-        // Check Chats table
-        var allChats = context.Chats.ToList();
-        Console.WriteLine("\n=== All Chats in Database ===");
-        Console.WriteLine($"Total chats: {allChats.Count}");
-        foreach (var chat in allChats)
-        {
-            Console.WriteLine($"ChatId: {chat.ChatId}, AgentId: {chat.AgentId}, IsActive: {chat.IsActive}");
-        }
-
-        // Check Agents table
-        var allAgents = context.Agents.ToList();
-        Console.WriteLine("\n=== All Agents in Database ===");
-        Console.WriteLine($"Total agents: {allAgents.Count}");
-        foreach (var agent in allAgents)
-        {
-            Console.WriteLine($"AgentId: {agent.AgentId}, Name: {agent.Name}, IsAvailable: {agent.IsAvailable}");
-        }
-
-        // Check Teams table
-        var allTeams = context.Teams.ToList();
-        Console.WriteLine("\n=== All Teams in Database ===");
-        Console.WriteLine($"Total teams: {allTeams.Count}");
-        foreach (var team in allTeams)
-        {
-            Console.WriteLine($"TeamId: {team.TeamId}, Name: {team.Name}, IsActive: {team.IsActive}");
-        }
     }
 
     public void UpdateChatAgentConnection(string chatId, string agentConnectionId)

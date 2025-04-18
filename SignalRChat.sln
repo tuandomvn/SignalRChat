@@ -5,8 +5,6 @@ VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat", "SignalRChat.csproj", "{05599CAC-3315-F30F-A886-7B324D0F96D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRChat.Tests", "..\SignalRChat.Tests\SignalRChat.Tests.csproj", "{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,18 +27,6 @@ Global
 		{05599CAC-3315-F30F-A886-7B324D0F96D9}.Release|x64.Build.0 = Release|Any CPU
 		{05599CAC-3315-F30F-A886-7B324D0F96D9}.Release|x86.ActiveCfg = Release|Any CPU
 		{05599CAC-3315-F30F-A886-7B324D0F96D9}.Release|x86.Build.0 = Release|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Debug|x64.Build.0 = Debug|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Debug|x86.Build.0 = Debug|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Release|x64.ActiveCfg = Release|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Release|x64.Build.0 = Release|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Release|x86.ActiveCfg = Release|Any CPU
-		{79097EAB-1811-4E47-9CD3-56AB0A7A4CD8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

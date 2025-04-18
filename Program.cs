@@ -17,7 +17,7 @@ builder.Services.AddDbContext<ChatDbContext>(options =>
 builder.Services.AddScoped<IServiceScopeFactory>(provider => 
     provider.GetRequiredService<IServiceScopeFactory>());
 
-builder.Services.AddScoped<IChatAPIService, ChatAPIService>();
+builder.Services.AddScoped<IDataRepository, DataRepository>();
 builder.Services.AddScoped<IAgentChatCoordinatorService, AgentChatCoordinatorService>();
 builder.Services.AddScoped<DataSeedUtil>();
 
