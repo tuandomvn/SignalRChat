@@ -4,7 +4,7 @@ using SignalRChat.Data;
 
 namespace SignalRChat.Services;
 
-public class ChatAPIService
+public class ChatAPIService : IChatAPIService
 {
     private readonly IServiceScopeFactory _scopeFactory;
 
@@ -463,17 +463,15 @@ public class ChatAPIService
         }
     }
 
-    public bool UpdateChatAgentConnection(string chatId, string connectionId)
+    public void UpdateChatAgentConnection(string chatId, string agentConnectionId)
     {
         using var context = GetContext();
         var chat = context.Chats.FirstOrDefault(c => c.ChatId == chatId);
         if (chat != null)
         {
-            chat.AgentConnectionId = connectionId;
+            chat.AgentConnectionId = agentConnectionId;
             context.SaveChanges();
-            return true;
         }
-        return false;
     }
 
     public async Task SaveChatMessage(ChatMessage message)
@@ -512,13 +510,14 @@ public class ChatAPIService
         }
     }
 
-    public async Task<List<ChatMessage>> GetChatHistory(string chatId)
+    public async Task<IEnumerable<ChatMessage>> GetChatHistory(string chatId)
     {
         using var context = GetContext();
-        return await context.ChatMessages
+        var messages = await context.ChatMessages
             .Where(m => m.ChatId == chatId)
             .OrderBy(m => m.Timestamp)
             .ToListAsync();
+        return messages;
     }
 
     public AssigningChat? GetActiveChatByDisplayName(string displayName)

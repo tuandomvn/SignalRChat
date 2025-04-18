@@ -2,11 +2,11 @@ using SignalRChat.Models;
 
 namespace SignalRChat.Services;
 
-public class AgentChatCoordinatorService
+public class AgentChatCoordinatorService : IAgentChatCoordinatorService
 {
-    private readonly ChatAPIService _chatAssignment;
+    private readonly IChatAPIService _chatAssignment;
 
-    public AgentChatCoordinatorService(ChatAPIService chatAssignment)
+    public AgentChatCoordinatorService(IChatAPIService chatAssignment)
     {
         _chatAssignment = chatAssignment;
     }
@@ -36,10 +36,8 @@ public class AgentChatCoordinatorService
             .Select(x => x.Agent);
     }
 
-    public AssigningChat? AssignUserToAgent(string connectionId, string displayName)
+    public AssigningChat? AssignUserToAgent(string connectionId, string displayName, TimeSpan currentTime)
     {
-        var currentTime = TimeSpan.FromHours(DateTime.Now.Hour);
-        
         var teams = _chatAssignment.GetAllTeams();
         
         // Find current active team based on time
@@ -101,27 +99,13 @@ public class AgentChatCoordinatorService
 
                         if (_chatAssignment.AddActiveChat(chat))
                         {
-                            Console.WriteLine($"Successfully added chat {chat.ChatId} to database");
                             return chat;
                         }
-                        else
-                        {
-                            Console.WriteLine($"Failed to add chat {chat.ChatId} to database");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Agent {agent.Name} has reached max chats: {activeChats}/{maxChats}");
                     }
                 }
             }
-            else
-            {
-                Console.WriteLine($"No available {level} agents in team {currentTeam.Name}");
-            }
         }
 
-        Console.WriteLine($"No agents with available capacity in team {currentTeam.Name}");
         return null;
     }
 } 

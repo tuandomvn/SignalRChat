@@ -13,9 +13,13 @@ builder.Services.AddSignalR();
 builder.Services.AddDbContext<ChatDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddSingleton<ChatAPIService>();
-builder.Services.AddSingleton<AgentChatCoordinatorService>();
-builder.Services.AddScoped<DataSeedService>();
+// Add ServiceScopeFactory
+builder.Services.AddScoped<IServiceScopeFactory>(provider => 
+    provider.GetRequiredService<IServiceScopeFactory>());
+
+builder.Services.AddScoped<IChatAPIService, ChatAPIService>();
+builder.Services.AddScoped<IAgentChatCoordinatorService, AgentChatCoordinatorService>();
+builder.Services.AddScoped<DataSeedUtil>();
 
 var app = builder.Build();
 
@@ -27,7 +31,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
     
     // Seed initial data
-    var seedService = services.GetRequiredService<DataSeedService>();
+    var seedService = services.GetRequiredService<DataSeedUtil>();
     seedService.SeedData();
 }
 

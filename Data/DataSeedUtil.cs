@@ -1,14 +1,13 @@
 using SignalRChat.Models;
-using SignalRChat.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace SignalRChat.Services;
+namespace SignalRChat.Data;
 
-public class DataSeedService
+public class DataSeedUtil
 {
     private readonly ChatDbContext _context;
 
-    public DataSeedService(ChatDbContext context)
+    public DataSeedUtil(ChatDbContext context)
     {
         _context = context;
     }

@@ -7,10 +7,10 @@ namespace SignalRChat.Hubs;
 
 public class ChatHub : Hub
 {
-    private readonly ChatAPIService _chatAssignment;
-    private readonly AgentChatCoordinatorService _coordinator;
+    private readonly IChatAPIService _chatAssignment;
+    private readonly IAgentChatCoordinatorService _coordinator;
 
-    public ChatHub(ChatAPIService chatAssignment, AgentChatCoordinatorService coordinator)
+    public ChatHub(IChatAPIService chatAssignment, IAgentChatCoordinatorService coordinator)
     {
         _chatAssignment = chatAssignment;
         _coordinator = coordinator;
@@ -61,7 +61,7 @@ public class ChatHub : Hub
         }
 
         // Try to assign a new chat using the coordinator
-        var chat = _coordinator.AssignUserToAgent(Context.ConnectionId, displayName);
+        var chat = _coordinator.AssignUserToAgent(Context.ConnectionId, displayName, TimeSpan.FromHours(DateTime.Now.Hour));
         if (chat != null)
         {
             var agent = _chatAssignment.GetAgentById(chat.AgentId);
