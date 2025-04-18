@@ -11,11 +11,11 @@ namespace SignalRChat.Pages;
 [AllowAnonymous]
 public class AgentDashboardModel : PageModel
 {
-    private readonly IDataRepository _chatAssignment;
+    private readonly IDataRepository _dataRepository;
 
     public AgentDashboardModel(IDataRepository chatAssignment)
     {
-        _chatAssignment = chatAssignment;
+        _dataRepository = chatAssignment;
     }
 
     [BindProperty(SupportsGet = true)]
@@ -30,16 +30,16 @@ public class AgentDashboardModel : PageModel
     public void OnGet()
     {
         // Get all teams with updated active status
-        AllTeams = _chatAssignment.GetAllTeams();
+        AllTeams = _dataRepository.GetAllTeams();
 
         // If AgentId is provided, load specific agent info
         if (!string.IsNullOrEmpty(AgentId))
         {
-            CurrentAgent = _chatAssignment.GetAgentById(AgentId);
+            CurrentAgent = _dataRepository.GetAgentById(AgentId);
             if (CurrentAgent != null)
             {
-                CurrentTeam = _chatAssignment.GetTeamById(CurrentAgent.TeamId);
-                ActiveChats = _chatAssignment.GetAgentActiveChats(AgentId);
+                CurrentTeam = _dataRepository.GetTeamById(CurrentAgent.TeamId);
+                ActiveChats = _dataRepository.GetAgentActiveChats(AgentId);
             }
             else
             {
@@ -56,7 +56,7 @@ public class AgentDashboardModel : PageModel
             return RedirectToPage("/AgentLogin");
         }
 
-        _chatAssignment.UpdateAgentAvailability(AgentId, isAvailable);
+        _dataRepository.UpdateAgentAvailability(AgentId, isAvailable);
         return RedirectToPage(new { agentId = AgentId });
     }
 
@@ -67,7 +67,7 @@ public class AgentDashboardModel : PageModel
             return RedirectToPage("/AgentLogin");
         }
 
-        _chatAssignment.EndChat(chatId);
+        _dataRepository.EndChat(chatId);
         return RedirectToPage(new { agentId = AgentId });
     }
 
@@ -75,7 +75,7 @@ public class AgentDashboardModel : PageModel
     {
         if (!string.IsNullOrEmpty(AgentId))
         {
-            _chatAssignment.UpdateAgentAvailability(AgentId, false);
+            _dataRepository.UpdateAgentAvailability(AgentId, false);
         }
         return RedirectToPage("/AgentLogin");
     }
@@ -121,7 +121,7 @@ public class AgentDashboardModel : PageModel
 
     public IEnumerable<AssigningChat> GetTeamActiveChats(string teamId)
     {
-        return _chatAssignment.GetTeamActiveChats(teamId);
+        return _dataRepository.GetTeamActiveChats(teamId);
     }
 
     public IActionResult OnGetActiveChatsPartial(string agentId)
@@ -131,7 +131,7 @@ public class AgentDashboardModel : PageModel
             return new EmptyResult();
         }
 
-        ActiveChats = _chatAssignment.GetAgentActiveChats(agentId);
+        ActiveChats = _dataRepository.GetAgentActiveChats(agentId);
         return new PartialViewResult
         {
             ViewName = "_ActiveChatsTable",
@@ -148,10 +148,10 @@ public class AgentDashboardModel : PageModel
 
         try
         {
-            CurrentAgent = _chatAssignment.GetAgentById(AgentId);
+            CurrentAgent = _dataRepository.GetAgentById(AgentId);
             if (CurrentAgent != null)
             {
-                ActiveChats = _chatAssignment.GetAgentActiveChats(AgentId);
+                ActiveChats = _dataRepository.GetAgentActiveChats(AgentId);
                 
                 // Return the partial view with the current model
                 var viewData = new ViewDataDictionary<AgentDashboardModel>(ViewData, this)

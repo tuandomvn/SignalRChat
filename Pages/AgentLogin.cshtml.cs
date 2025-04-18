@@ -6,11 +6,11 @@ namespace SignalRChat.Pages;
 
 public class AgentLoginModel : PageModel
 {
-    private readonly IDataRepository _chatAssignment;
+    private readonly IDataRepository _dataRepository;
 
     public AgentLoginModel(IDataRepository chatAssignment)
     {
-        _chatAssignment = chatAssignment;
+        _dataRepository = chatAssignment;
     }
 
     [BindProperty]
@@ -24,7 +24,7 @@ public class AgentLoginModel : PageModel
 
     public IActionResult OnPost()
     {
-        var agent = _chatAssignment.GetAgentById(AgentId);
+        var agent = _dataRepository.GetAgentById(AgentId);
         if (agent == null)
         {
             ErrorMessage = "Agent not found. Please check your credentials.";
@@ -32,7 +32,7 @@ public class AgentLoginModel : PageModel
         }
 
         // Update agent availability
-        _chatAssignment.UpdateAgentAvailability(AgentId, true);
+        _dataRepository.UpdateAgentAvailability(AgentId, true);
         
         return RedirectToPage("/AgentDashboard", new { agentId = AgentId });
     }

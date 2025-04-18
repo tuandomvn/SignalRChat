@@ -1,17 +1,18 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using SignalRChat.Models;
 using SignalRChat.Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace SignalRChat.Hubs;
 
 public class ChatHub : Hub
 {
-    private readonly IDataRepository _chatAPIService;
+    private readonly IDataRepository _dataRepostory;
     private readonly IAgentChatCoordinatorService _coordinator;
-
-    public ChatHub(IDataRepository chatAssignment, IAgentChatCoordinatorService coordinator)
+    private int _maxConnectionAttempt = 3;
+    public ChatHub(IDataRepository dataRepos, IAgentChatCoordinatorService coordinator)
     {
-        _chatAPIService = chatAssignment;
+        _dataRepostory = dataRepos;
         _coordinator = coordinator;
     }
 
@@ -19,36 +20,55 @@ public class ChatHub : Hub
     public async Task RegisterConnection(string agentId)
     {
         // Check if agent exists
-        var agent = _chatAPIService.GetAgentById(agentId);
+        var agent = _dataRepostory.GetAgentById(agentId);
         if (agent == null)
         {
             throw new HubException("Agent not found.");
         }
 
         // Remove old connection if exists
-        var existingConnectionId = _chatAPIService.GetAgentConnectionId(agentId);
+        var existingConnectionId = _dataRepostory.GetAgentConnectionId(agentId);
         if (!string.IsNullOrEmpty(existingConnectionId))
         {
             await Groups.RemoveFromGroupAsync(existingConnectionId, "Agents");
         }
 
         // Update connection and add to group
-        _chatAPIService.UpdateAgentConnection(agentId, Context.ConnectionId);
+        _dataRepostory.UpdateAgentConnection(agentId, Context.ConnectionId);
         await Groups.AddToGroupAsync(Context.ConnectionId, "Agents");
+    }
+
+    //When user want to starts a chat
+    public async Task<bool> AttemptToConnect(string displayName)
+    {
+        var connectionId = Context.ConnectionId;
+
+        // Save attempt
+        await _dataRepostory.SaveConnectionAttempt(connectionId, displayName);
+
+        return true;
     }
 
     //When user want to starts a chat
     public async Task StartChat(string displayName)
     {
+        // Check if we have enough attempts
+        var attempts = await _dataRepostory.GetConnectionAttemptsCount(Context.ConnectionId);
+        if (attempts < _maxConnectionAttempt)
+        {
+            await Clients.Caller.SendAsync("NoChatAssigned", "Please complete all connection attempts first.");
+            return;
+        }
+
         // Check if user already has an active chat
-        var existingChat = _chatAPIService.GetActiveChatByConnectionId(Context.ConnectionId);
+        var existingChat = _dataRepostory.GetActiveChatByConnectionId(Context.ConnectionId);
         if (existingChat != null)
         {
-            var existingAgent = _chatAPIService.GetAgentById(existingChat.AgentId);
+            var existingAgent = _dataRepostory.GetAgentById(existingChat.AgentId);
             if (existingAgent != null)
             {
                 await Groups.AddToGroupAsync(Context.ConnectionId, existingChat.ChatId);
-                var agentConnectionId = _chatAPIService.GetAgentConnectionId(existingAgent.AgentId);
+                var agentConnectionId = _dataRepostory.GetAgentConnectionId(existingAgent.AgentId);
                 if (!string.IsNullOrEmpty(agentConnectionId))
                 {
                     await Groups.AddToGroupAsync(agentConnectionId, existingChat.ChatId);
@@ -59,30 +79,30 @@ public class ChatHub : Hub
         }
 
         // Get available team based on current time
-        Team? currentTeam = _coordinator.GetAvailableTeam(TimeSpan.FromHours(DateTime.Now.Hour));
+        var currentTime = TimeSpan.FromHours(DateTime.Now.Hour);
+        Team? currentTeam = _coordinator.GetAvailableTeam(currentTime);
         if (currentTeam == null)
         {
-            await Clients.Caller.SendAsync("NoChatAssigned", "No agents available at the moment. Please try again later.");
+            await Clients.Caller.SendAsync("NoChatAssigned", "Chat is refused - No agents available at the moment. Please try again later.");
             return;
         }
 
         var chat = _coordinator.AssignUserToAgent(Context.ConnectionId, displayName, currentTeam);
         if (chat != null)
         {
-            var agent = _chatAPIService.GetAgentById(chat.AgentId);
+            var agent = _dataRepostory.GetAgentById(chat.AgentId);
             if (agent != null)
             {
                 // Add both user and agent to the chat group
                 await Groups.AddToGroupAsync(Context.ConnectionId, chat.ChatId);
 
                 // Get agent's current connection and add to group
-                var agentConnectionId = _chatAPIService.GetAgentConnectionId(agent.AgentId);
+                var agentConnectionId = _dataRepostory.GetAgentConnectionId(agent.AgentId);
                 if (!string.IsNullOrEmpty(agentConnectionId))
                 {
                     await Groups.AddToGroupAsync(agentConnectionId, chat.ChatId);
 
-                    // Update the chat's AgentConnectionId
-                    _chatAPIService.UpdateChatAgentConnection(chat.ChatId, agentConnectionId);
+                    _dataRepostory.UpdateChatAgentConnection(chat.ChatId, agentConnectionId);
 
                     // Notify both parties
                     await Clients.Caller.SendAsync("ChatAssigned", "You are connected to " + agent.Name);
@@ -99,14 +119,14 @@ public class ChatHub : Hub
         }
         else
         {
-            await Clients.Caller.SendAsync("NoChatAssigned", "No agents available at the moment. Please try again later.");
+            await Clients.Caller.SendAsync("NoChatAssigned", "Chat is refused - No agents available at the moment. Please try again later.");
         }
     }
 
     //When both sides send messages
     public async Task SendMessage(string user, string message)
     {
-        var chat = _chatAPIService.GetActiveChatByConnectionId(Context.ConnectionId);
+        var chat = _dataRepostory.GetActiveChatByConnectionId(Context.ConnectionId);
 
         if (chat != null)
         {
@@ -119,7 +139,7 @@ public class ChatHub : Hub
                 IsFromAgent = Context.ConnectionId == chat.AgentConnectionId
             };
 
-            await _chatAPIService.SaveChatMessage(chatMessage);
+            await _dataRepostory.SaveChatMessage(chatMessage);
 
             // Send to all clients in the group
             await Clients.Group(chat.ChatId).SendAsync("ReceiveMessage", user, message, chat.ChatId);
@@ -132,8 +152,8 @@ public class ChatHub : Hub
 
     public async Task EndChat(string chatId)
     {
-        var chat = _chatAPIService.GetActiveChat(chatId);
-        if (chat != null && _chatAPIService.EndChat(chatId))
+        var chat = _dataRepostory.GetActiveChat(chatId);
+        if (chat != null && _dataRepostory.EndChat(chatId))
         {
             // Get who ended the chat (user or agent)
             string endedBy = Context.ConnectionId == chat.UserConnectionId ? chat.DisplayName : "Agent";
@@ -152,14 +172,14 @@ public class ChatHub : Hub
 
     public override async Task OnDisconnectedAsync(Exception? exception)
     {
-        var agentId = _chatAPIService.GetAgentIdByConnectionId(Context.ConnectionId);
+        var agentId = _dataRepostory.GetAgentIdByConnectionId(Context.ConnectionId);
         if (agentId != null)
         {
-            var agent = _chatAPIService.GetAgentById(agentId);
+            var agent = _dataRepostory.GetAgentById(agentId);
             if (agent != null)
             {
                 // Handle temporary disconnection instead of removing the agent
-                _chatAPIService.HandleAgentDisconnection(agent.AgentId);
+                _dataRepostory.HandleAgentDisconnection(agent.AgentId);
                 await Clients.Others.SendAsync("AgentDisconnected", $"Agent {agent.Name} has disconnected");
                 // Broadcast status change when agent disconnects
                 await Clients.All.SendAsync("AgentStatusChanged");
@@ -172,20 +192,20 @@ public class ChatHub : Hub
     // Debug endpoint to get all active chats
     public IEnumerable<AssigningChat> GetAllActiveChats()
     {
-        return _chatAPIService.GetAllActiveChats();
+        return _dataRepostory.GetAllActiveChats();
     }
 
     //Agent join chat
     public async Task JoinChat(string chatId)
     {
-        var chat = _chatAPIService.GetActiveChat(chatId);
+        var chat = _dataRepostory.GetActiveChat(chatId);
         if (chat != null)
         {
-            var agentId = _chatAPIService.GetAgentIdByConnectionId(Context.ConnectionId);
+            var agentId = _dataRepostory.GetAgentIdByConnectionId(Context.ConnectionId);
             if (agentId != null && agentId == chat.AgentId)
             {
                 // Load and send chat history to the agent
-                var chatHistory = await _chatAPIService.GetChatHistory(chatId);
+                var chatHistory = await _dataRepostory.GetChatHistory(chatId);
                 if (chatHistory.Any())
                 {
                     foreach (var message in chatHistory)
@@ -216,10 +236,10 @@ public class ChatHub : Hub
 
     public async Task LeaveChat(string chatId)
     {
-        var chat = _chatAPIService.GetActiveChat(chatId);
+        var chat = _dataRepostory.GetActiveChat(chatId);
         if (chat != null)
         {
-            var agentId = _chatAPIService.GetAgentIdByConnectionId(Context.ConnectionId);
+            var agentId = _dataRepostory.GetAgentIdByConnectionId(Context.ConnectionId);
             if (agentId != null && agentId == chat.AgentId)
             {
                 await Groups.RemoveFromGroupAsync(Context.ConnectionId, chatId);
@@ -227,4 +247,6 @@ public class ChatHub : Hub
             }
         }
     }
+
+
 }

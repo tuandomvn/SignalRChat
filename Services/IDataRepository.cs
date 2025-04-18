@@ -29,4 +29,8 @@ public interface IDataRepository
     Task UpdateUserConnection(string chatId, string connectionId);
     Task UpdateChatDisplayName(string chatId, string displayName);
     Dictionary<string, string> GetAllAgentConnections();
+    Task<bool> SaveConnectionAttempt(string connectionId, string displayName);
+    Task<int> GetConnectionAttemptsCount(string connectionId);
+    Task<IEnumerable<ConnectionAttempt>> GetAllConnectionAttempts();
+    Task<bool> DeleteConnectionAttempt(int id);
 } 

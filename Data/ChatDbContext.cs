@@ -14,6 +14,7 @@ public class ChatDbContext : DbContext
     public DbSet<AssigningChat> Chats => Set<AssigningChat>();
     public DbSet<AgentConnection> AgentConnections => Set<AgentConnection>();
     public DbSet<ChatMessage> ChatMessages => Set<ChatMessage>();
+    public DbSet<ConnectionAttempt> ConnectionAttempts => Set<ConnectionAttempt>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

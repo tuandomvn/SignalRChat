@@ -84,7 +84,7 @@ public class DataRepository : IDataRepository
     public void UpdateAgentConnection(string agentId, string connectionId)
     {
         using var context = GetContext();
-        
+
         // Remove existing connections for this agent
         var existingConnections = context.AgentConnections
             .Where(c => c.AgentId == agentId)
@@ -100,7 +100,7 @@ public class DataRepository : IDataRepository
 
         // Update agent availability
         UpdateAgentAvailability(agentId, true);
-        
+
         context.SaveChanges();
     }
 
@@ -116,7 +116,7 @@ public class DataRepository : IDataRepository
     {
         using var context = GetContext();
         var currentTime = DateTime.Now.TimeOfDay;
-        
+
         // First try to find a team whose shift exactly matches the current time
         var currentTeam = context.Teams
             .Include(t => t.Agents)
@@ -149,7 +149,7 @@ public class DataRepository : IDataRepository
     {
         using var context = GetContext();
         Team? team;
-        
+
         if (string.IsNullOrEmpty(teamId))
         {
             team = GetCurrentShiftTeam();
@@ -177,7 +177,7 @@ public class DataRepository : IDataRepository
             var overflowTeam = context.Teams
                 .Include(t => t.Agents)
                 .FirstOrDefault(t => t.Shift == ShiftType.Overflow && t.IsActive);
-            
+
             if (overflowTeam != null)
             {
                 agent = overflowTeam.Agents
@@ -210,13 +210,13 @@ public class DataRepository : IDataRepository
         var chats = context.Chats
             .Where(c => c.AgentId == agentId && c.IsActive)
             .ToList();
-            
+
         Console.WriteLine($"Found {chats.Count} active chats for agent {agentId}");
         foreach (var chat in chats)
         {
             Console.WriteLine($"Chat {chat.ChatId} - IsActive: {chat.IsActive}");
         }
-        
+
         return chats;
     }
 
@@ -250,12 +250,12 @@ public class DataRepository : IDataRepository
         using var context = GetContext();
         UpdateAllTeamsActiveStatus(context);
         context.SaveChanges();
-        
+
         // Get data first, then sort in memory
         var teams = context.Teams
             .Include(t => t.Agents)
             .ToList(); // Execute query and bring data to memory
-            
+
         // Sort in memory (LINQ to Objects)
         return teams
             .OrderBy(t => t.Shift == ShiftType.Overflow)
@@ -267,7 +267,7 @@ public class DataRepository : IDataRepository
         using var context = GetContext();
         return context.Chats
             .Include(c => c.Agent)
-            .FirstOrDefault(c => (c.UserConnectionId == connectionId ||  c.AgentConnectionId == connectionId)
+            .FirstOrDefault(c => (c.UserConnectionId == connectionId || c.AgentConnectionId == connectionId)
             && c.IsActive);
     }
 
@@ -277,12 +277,12 @@ public class DataRepository : IDataRepository
         var agent = context.Agents
             .Include(a => a.Team)
             .FirstOrDefault(a => a.AgentId == agentId);
-            
+
         if (agent != null)
         {
             // Just mark agent as unavailable
             agent.IsAvailable = false;
-            
+
             // Remove the connection
             var connections = context.AgentConnections
                 .Where(c => c.AgentId == agentId)
@@ -353,32 +353,32 @@ public class DataRepository : IDataRepository
     {
         using var context = GetContext();
         Console.WriteLine($"[AddActiveChat] Adding new chat {chat.ChatId} with IsActive={chat.IsActive}");
-        
+
         if (context.Chats.Any(c => c.ChatId == chat.ChatId))
         {
             Console.WriteLine($"[AddActiveChat] Chat {chat.ChatId} already exists");
             return false;
         }
-            
+
         // Ensure IsActive is set to true
         chat.IsActive = true;
         Console.WriteLine($"[AddActiveChat] Ensured IsActive is true for chat {chat.ChatId}");
-        
+
         context.Chats.Add(chat);
-        try 
+        try
         {
             context.SaveChanges();
-            
+
             // Verify the chat was saved correctly by loading it fresh from the database
             context.Entry(chat).Reload();
             Console.WriteLine($"[AddActiveChat] After save - Chat {chat.ChatId} IsActive: {chat.IsActive}");
-            
+
             // Double check by querying
             var savedChat = context.Chats
                 .AsNoTracking()
                 .FirstOrDefault(c => c.ChatId == chat.ChatId);
             Console.WriteLine($"[AddActiveChat] Queried from db - Chat {chat.ChatId} IsActive: {savedChat?.IsActive}");
-            
+
             return true;
         }
         catch (Exception ex)
@@ -403,13 +403,13 @@ public class DataRepository : IDataRepository
             .Include(c => c.Agent)
             //.Where(c => c.IsActive)
             .ToList();
-            
+
         Console.WriteLine($"Found {chats.Count} active chats");
         foreach (var chat in chats)
         {
             Console.WriteLine($"Chat {chat.ChatId} - IsActive: {chat.IsActive}");
         }
-        
+
         return chats;
     }
 
@@ -435,13 +435,13 @@ public class DataRepository : IDataRepository
     {
         using var context = GetContext();
         using var transaction = await context.Database.BeginTransactionAsync();
-        
+
         try
         {
             // Verify the chat exists and is active
             var chat = await context.Chats
                 .FirstOrDefaultAsync(c => c.ChatId == message.ChatId && c.IsActive);
-                
+
             if (chat == null)
             {
                 throw new InvalidOperationException($"Chat {message.ChatId} not found or is not active");
@@ -450,17 +450,17 @@ public class DataRepository : IDataRepository
             // Add and save the message
             await context.ChatMessages.AddAsync(message);
             await context.SaveChangesAsync();
-            
+
             // Commit the transaction
             await transaction.CommitAsync();
-            
+
             Console.WriteLine($"Message saved successfully in chat {message.ChatId}");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error in SaveChatMessage: {ex.Message}");
             Console.WriteLine($"Stack trace: {ex.StackTrace}");
-            
+
             // Rollback the transaction
             await transaction.RollbackAsync();
             throw; // Re-throw the exception to be handled by the caller
@@ -505,5 +505,68 @@ public class DataRepository : IDataRepository
             chat.DisplayName = displayName;
             await context.SaveChangesAsync();
         }
+    }
+
+    public async Task<bool> SaveConnectionAttempt(string connectionId, string displayName)
+    {
+        using var context = GetContext();
+
+        // Find existing attempt for this connection
+        var existingAttempt = await context.ConnectionAttempts
+            .FirstOrDefaultAsync(ca => ca.ConnectionId == connectionId);
+
+        if (existingAttempt != null)
+        {
+            // Update existing attempt
+            existingAttempt.DisplayName = displayName;
+            existingAttempt.AttemptNumber++;
+            existingAttempt.AttemptTime = DateTime.UtcNow;
+            existingAttempt.IsSuccessful = true;
+        }
+        else
+        {
+            // Create new attempt
+            var attempt = new ConnectionAttempt
+            {
+                ConnectionId = connectionId,
+                DisplayName = displayName,
+                AttemptNumber = 1,
+                AttemptTime = DateTime.UtcNow,
+                IsSuccessful = true
+            };
+            context.ConnectionAttempts.Add(attempt);
+        }
+
+        await context.SaveChangesAsync();
+        return true;
+    }
+
+    public async Task<int> GetConnectionAttemptsCount(string connectionId)
+    {
+        using var context = GetContext();
+        return await context.ConnectionAttempts
+            .Where(ca => ca.ConnectionId == connectionId)
+            .CountAsync();
+    }
+
+    public async Task<IEnumerable<ConnectionAttempt>> GetAllConnectionAttempts()
+    {
+        using var context = GetContext();
+        return await context.ConnectionAttempts
+            .OrderByDescending(ca => ca.AttemptTime)
+            .ToListAsync();
+    }
+
+    public async Task<bool> DeleteConnectionAttempt(int id)
+    {
+        using var context = GetContext();
+        var attempt = await context.ConnectionAttempts.FindAsync(id);
+        if (attempt != null)
+        {
+            context.ConnectionAttempts.Remove(attempt);
+            await context.SaveChangesAsync();
+            return true;
+        }
+        return false;
     }
 }

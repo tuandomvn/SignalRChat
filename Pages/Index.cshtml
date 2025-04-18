@@ -80,13 +80,48 @@
                 }
 
                 try {
-                    await connection.start();
+                    // Check connection state and start if needed
+                    if (connection.state === signalR.HubConnectionState.Disconnected) {
+                        await connection.start();
+                    }
+                    
                     currentUserName = name;
+                    
+                    // Try to connect 3 times
+                    let attempts = 0;
+                    const maxAttempts = 3;
+                    let connected = false;
+
+                    while (attempts <= maxAttempts && !connected) {
+                        attempts++;
+                        connectionStatus.className = "alert alert-info";
+                        connectionStatus.textContent = `Attempting to connect (${attempts}/${maxAttempts})...`;
+                        
+                        const result = await connection.invoke("AttemptToConnect", name);
+                        if (!result) {
+                            break;
+                        }
+
+                        if(result && attempts == maxAttempts)
+                        {
+                            connected = true;
+                            break;
+                        }
+                        
+                        if (attempts < maxAttempts) {
+                            // Wait for 1 seconds before next attempt
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+                        }
+                    }
+
+                    if (!connected) {
+                        connectionStatus.className = "alert alert-danger";
+                        connectionStatus.textContent = "Failed to complete connection attempts. Please try again.";
+                        return;
+                    }
+
+                    // If all attempts are successful, start the chat
                     await connection.invoke("StartChat", name);
-                    userInfoArea.style.display = "none";
-                    messageInputGroup.style.display = "flex";
-                    endSessionArea.style.display = "block";
-                    isConnected = true;
                 } catch (err) {
                     console.error(err);
                     connectionStatus.className = "alert alert-danger";
@@ -147,11 +182,22 @@
         connection.on("ChatAssigned", (message) => {
             connectionStatus.className = "alert alert-success";
             connectionStatus.textContent = message;
+            
+            // Show chat interface
+            userInfoArea.style.display = "none";
+            messageInputGroup.style.display = "flex";
+            endSessionArea.style.display = "block";
+            document.getElementById("chatArea").style.display = "block";
+            isConnected = true;
         });
 
         connection.on("NoChatAssigned", (message) => {
             connectionStatus.className = "alert alert-warning";
             connectionStatus.textContent = message;
+            if (message.includes("complete all connection attempts")) {
+                // Don't hide chat area if we need more attempts
+                return;
+            }
             document.getElementById("chatArea").style.display = "none";
             userInfoArea.style.display = "block";
             isConnected = false;

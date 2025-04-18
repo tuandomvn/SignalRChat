@@ -9,11 +9,11 @@ namespace SignalRChat.Pages;
 [AllowAnonymous]
 public class AdminDashboardModel : PageModel
 {
-    private readonly DataRepository _chatAssignment;
+    private readonly DataRepository _dataRepository;
 
     public AdminDashboardModel(DataRepository chatAssignment)
     {
-        _chatAssignment = chatAssignment;
+        _dataRepository = chatAssignment;
     }
 
     public IEnumerable<Team> Teams { get; private set; } = new List<Team>();
@@ -24,16 +24,16 @@ public class AdminDashboardModel : PageModel
     public void OnGet()
     {
         // Get all teams
-        Teams = _chatAssignment.GetAllTeams();
+        Teams = _dataRepository.GetAllTeams();
 
         // Calculate statistics
         TotalAgents = Teams.Sum(t => t.Agents.Count);
         AvailableAgents = Teams.Sum(t => t.Agents.Count(a => a.IsAvailable));
-        ActiveChats = Teams.Sum(t => _chatAssignment.GetTeamActiveChats(t.TeamId).Count());
+        ActiveChats = Teams.Sum(t => _dataRepository.GetTeamActiveChats(t.TeamId).Count());
     }
 
     public IEnumerable<AssigningChat> GetAgentActiveChats(string agentId)
     {
-        return _chatAssignment.GetAgentActiveChats(agentId);
+        return _dataRepository.GetAgentActiveChats(agentId);
     }
 } 
