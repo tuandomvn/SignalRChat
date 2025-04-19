@@ -518,21 +518,81 @@
                 }
             }
 
-            connection.on("ChatEnded", (message) => {
+            connection.on("ChatEnded", (data) => {
                 try {
-                    console.log('Chat ended:', message);
+                    console.log('Chat ended event received:', data);
                     
-                    // Extract chatId from the message if it's an object
-                    const chatId = typeof message === 'object' ? message.chatId : message.split(' ')[0];
+                    // Extract chatId and message from the data
+                    const chatId = data.chatId;
+                    const message = data.message || 'Chat session has ended';
                     
-                    // Find and close the chat modal
+                    console.log('Extracted chatId:', chatId);
+                    
+                    if (!chatId) {
+                        console.error('Could not determine chatId from data:', data);
+                        return;
+                    }
+                    
+                    // Find the chat modal
                     const modal = document.getElementById(`chatModal_${chatId}`);
                     if (modal) {
-                        const bsModal = bootstrap.Modal.getInstance(modal);
-                        if (bsModal) {
-                            bsModal.hide();
+                        // Add the end message to the chat
+                        const messagesList = modal.querySelector('.messages-list');
+                        if (messagesList) {
+                            const messageElement = document.createElement('div');
+                            messageElement.classList.add('mb-2', 'text-center');
+                            messageElement.innerHTML = `
+                                <span class="badge bg-danger">System</span>
+                                <div class="d-inline-block p-2 rounded bg-danger text-white">
+                                    ${message}
+                                </div>
+                            `;
+                            messagesList.appendChild(messageElement);
+                            messagesList.scrollTop = messagesList.scrollHeight;
                         }
-                        modal.remove();
+
+                        // Hide input group and buttons
+                        const inputGroup = modal.querySelector('.input-group');
+                        if (inputGroup) {
+                            inputGroup.style.display = 'none';
+                        }
+
+                        const sendButton = modal.querySelector('.send-button');
+                        if (sendButton) {
+                            sendButton.style.display = 'none';
+                        }
+
+                        const minimizeButton = modal.querySelector('[data-bs-dismiss="modal"]');
+                        if (minimizeButton) {
+                            minimizeButton.style.display = 'none';
+                        }
+
+                        const endSessionButton = modal.querySelector('.end-session-button');
+                        if (endSessionButton) {
+                            endSessionButton.style.display = 'none';
+                        }
+
+                        // Disable message input
+                        const messageInput = modal.querySelector('.message-input');
+                        if (messageInput) {
+                            messageInput.disabled = true;
+                            messageInput.placeholder = 'Chat has ended';
+                        }
+
+                        // Add close button to modal footer
+                        const modalFooter = modal.querySelector('.modal-footer');
+                        if (modalFooter) {
+                            // Clear existing buttons
+                            modalFooter.innerHTML = '';
+                            
+                            // Add close button
+                            const closeButton = document.createElement('button');
+                            closeButton.type = 'button';
+                            closeButton.className = 'btn btn-secondary';
+                            closeButton.setAttribute('data-bs-dismiss', 'modal');
+                            closeButton.textContent = 'Close';
+                            modalFooter.appendChild(closeButton);
+                        }
                     }
 
                     // Remove minimized chat button if exists
@@ -540,21 +600,6 @@
                     if (minimizedButton) {
                         minimizedButton.remove();
                     }
-
-                    // Show notification
-                    const notification = document.createElement('div');
-                    notification.className = 'alert alert-info alert-dismissible fade show position-fixed top-0 end-0 m-3';
-                    notification.innerHTML = `
-                        <strong>Chat Ended</strong><br>
-                        ${typeof message === 'string' ? message : 'Chat session has ended'}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    `;
-                    document.body.appendChild(notification);
-
-                    // Remove notification after 5 seconds
-                    setTimeout(() => {
-                        notification.remove();
-                    }, 5000);
 
                     // Refresh the active chats table
                     refreshActiveChats();

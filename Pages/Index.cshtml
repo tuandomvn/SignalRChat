@@ -121,7 +121,11 @@
                     }
 
                     // If all attempts are successful, start the chat
-                    await connection.invoke("StartChat", name);
+                    const chatResult = await connection.invoke("StartChat", name);
+                    if (chatResult && chatResult.chatId) {
+                        currentChatId = chatResult.chatId;
+                        console.log("Chat started with ID:", currentChatId);
+                    }
                 } catch (err) {
                     console.error(err);
                     connectionStatus.className = "alert alert-danger";
@@ -131,14 +135,31 @@
         });
 
         endSessionButton.addEventListener("click", async () => {
+            console.log("End session button clicked, currentChatId:", currentChatId, "isConnected:", isConnected);
             if (currentChatId && isConnected) {
                 try {
                     await connection.invoke("EndChat", currentChatId);
-                    addMessage("System", "You have ended the chat session");
+                    console.log("EndChat invoked successfully");
+                    
+                    // Reset UI state
+                    userInfoArea.style.display = "block";
+                    messageInputGroup.style.display = "none";
+                    endSessionArea.style.display = "none";
+                    isConnected = false;
+                    currentChatId = null;
+                    userName.value = "";
+                    currentUserName = "";
+                    
+                    // Update connection status
+                    connectionStatus.className = "alert alert-info";
+                    connectionStatus.textContent = "Chat session ended. You can start a new chat session.";
                 } catch (err) {
                     console.error("Error ending chat:", err);
                     addMessage("System", "Failed to end chat session. Please try again.");
                 }
+            } else {
+                console.log("Cannot end chat - currentChatId or isConnected is invalid");
+                addMessage("System", "Cannot end chat session. Please try reconnecting.");
             }
         });
 
@@ -189,6 +210,7 @@
             endSessionArea.style.display = "block";
             document.getElementById("chatArea").style.display = "block";
             isConnected = true;
+            console.log("Chat assigned, isConnected set to true");
         });
 
         connection.on("NoChatAssigned", (message) => {
@@ -203,13 +225,20 @@
             isConnected = false;
             currentChatId = null;
             currentUserName = "";
+            console.log("No chat assigned, isConnected set to false");
         });
 
         connection.on("NewChat", ({ chatId }) => {
             currentChatId = chatId;
+            console.log("New chat started with ID:", chatId);
         });
 
-        connection.on("ChatEnded", (message) => {
+        connection.on("ChatEnded", (data) => {
+            console.log("Chat ended event received:", data);
+            
+            // Extract message from the data
+            const message = data.message || 'Chat session has ended';
+            
             connectionStatus.className = "alert alert-info";
             connectionStatus.textContent = message;
             userInfoArea.style.display = "block";

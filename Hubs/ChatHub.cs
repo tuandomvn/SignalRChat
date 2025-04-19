@@ -50,7 +50,7 @@ public class ChatHub : Hub
     }
 
     //When user want to starts a chat
-    public async Task StartChat(string displayName)
+    public async Task<object> StartChat(string displayName)
     {
         // Check if we have enough attempts
         //var attempts = await _dataRepostory.GetConnectionAttemptsCount(Context.ConnectionId);
@@ -74,7 +74,7 @@ public class ChatHub : Hub
                     await Groups.AddToGroupAsync(agentConnectionId, existingChat.ChatId);
                     await Clients.Caller.SendAsync("ChatAssigned", "You are connected to " + existingAgent.Name);
                 }
-                return;
+                return new { chatId = existingChat.ChatId };
             }
         }
 
@@ -84,7 +84,7 @@ public class ChatHub : Hub
         if (currentTeam == null)
         {
             await Clients.Caller.SendAsync("NoChatAssigned", "Chat is refused - No agents available at the moment. Please try again later.");
-            return;
+            return null;
         }
 
         var chat = _coordinator.AssignUserToAgent(Context.ConnectionId, displayName, currentTeam);
@@ -114,6 +114,9 @@ public class ChatHub : Hub
                         "System",
                         $"Chat started. {displayName} is now connected with {agent.Name}.",
                         chat.ChatId);
+
+
+                    return new { chatId = chat.ChatId };
                 }
             }
         }
@@ -121,6 +124,8 @@ public class ChatHub : Hub
         {
             await Clients.Caller.SendAsync("NoChatAssigned", "Chat is refused - No agents available at the moment. Please try again later.");
         }
+
+        return null;
     }
 
     //When both sides send messages
@@ -158,8 +163,11 @@ public class ChatHub : Hub
             // Get who ended the chat (user or agent)
             string endedBy = Context.ConnectionId == chat.UserConnectionId ? chat.DisplayName : "Agent";
 
-            // Send end notification to the chat group
-            await Clients.Group(chatId).SendAsync("ChatEnded", $"Chat ended by {endedBy}");
+            // Send end notification to the chat group with chatId
+            await Clients.Group(chatId).SendAsync("ChatEnded", new { 
+                message = $"Chat ended by {endedBy}",
+                chatId = chatId 
+            });
 
             // Remove both user and agent from the chat group
             if (!string.IsNullOrEmpty(chat.UserConnectionId))
