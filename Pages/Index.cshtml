@@ -204,6 +204,9 @@
             connectionStatus.className = "alert alert-success";
             connectionStatus.textContent = message;
             
+            // Clear old chat messages
+            messagesList.innerHTML = '';
+            
             // Show chat interface
             userInfoArea.style.display = "none";
             messageInputGroup.style.display = "flex";
