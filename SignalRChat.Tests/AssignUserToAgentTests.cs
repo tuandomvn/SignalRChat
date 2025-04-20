@@ -5,12 +5,12 @@ using Xunit;
 
 namespace SignalRChat.Tests;
 
-public class AgentChatCoordinatorServiceTests
+public class AssignUserToAgentTests
 {
     private readonly Mock<IDataRepository> _mockChatAPIService;
     private readonly AgentChatCoordinatorService _service;
 
-    public AgentChatCoordinatorServiceTests()
+    public AssignUserToAgentTests()
     {
         _mockChatAPIService = new Mock<IDataRepository>();
         _service = new AgentChatCoordinatorService(_mockChatAPIService.Object);
